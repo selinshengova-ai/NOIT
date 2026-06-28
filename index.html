@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SchoolPulse — Днес</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__logo">
+        <div class="sidebar__logo-icon">SP</div>
+        <div class="sidebar__logo-text">School<span>Pulse</span></div>
+      </div>
+
+      <div class="sidebar__profile">
+        <div class="profile-card">
+          <div class="profile-card__avatar">СМ</div>
+          <div class="profile-card__info">
+            <div class="profile-card__name">Селин М.</div>
+            <div class="profile-card__meta">
+              <span class="status-dot"></span>
+              10А · Активен
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar__school">СУ „Христо Ботев"<br>гр. Пловдив</div>
+
+      <ul class="sidebar__nav">
+        <li><a href="index.html" class="active"><span class="sidebar__nav-icon">☀</span> Днес</a></li>
+        <li><a href="#"><span class="sidebar__nav-icon">📅</span> Разписание</a></li>
+        <li><a href="#"><span class="sidebar__nav-icon">👤</span> Учители</a></li>
+        <li><a href="#"><span class="sidebar__nav-icon">⚙</span> Настройки</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+      <header class="page-header">
+        <div>
+          <h1 class="page-header__greeting">Добро утро, Селин 👋</h1>
+          <p class="page-header__sub">Петък, 27 юни 2025 · 10А</p>
+        </div>
+        <div class="page-header__actions">
+          <span class="badge badge--changes">2 промени</span>
+          <span class="badge badge--live"><span class="pulse"></span> На живо</span>
+        </div>
+      </header>
+
+      <!-- Single alert — only the most urgent change -->
+      <div class="alert-strip">
+        <span class="alert-strip__icon">⏱</span>
+        <div>
+          <div class="alert-strip__text"><strong>г-н Петров закъснява</strong> за часа по Физика</div>
+          <div class="alert-strip__detail">Физика · 5-ти час · Стая 305 · ~10 мин</div>
+        </div>
+        <span class="alert-strip__time">09:42</span>
+      </div>
+
+      <div class="content-grid">
+
+        <!-- Daily schedule -->
+        <section class="card">
+          <div class="card__header">
+            <h2 class="card__title">Дневен график</h2>
+          </div>
+          <ol class="schedule-list">
+
+            <li class="schedule-row schedule-row--finished">
+              <div class="schedule-row__time">08:00<br>08:40</div>
+              <div class="schedule-row__period">1</div>
+              <div>
+                <div class="schedule-row__subject">Български език и литература</div>
+                <div class="schedule-row__teacher">г-жа Колева</div>
+              </div>
+              <div class="schedule-row__status">
+                <div class="schedule-row__room">Стая 207</div>
+                <span class="pill pill--done">Приключен</span>
+              </div>
+            </li>
+
+            <li class="schedule-row schedule-row--finished">
+              <div class="schedule-row__time">08:50<br>09:30</div>
+              <div class="schedule-row__period">2</div>
+              <div>
+                <div class="schedule-row__subject">История и цивилизации</div>
+                <div class="schedule-row__teacher">г-н Димитров</div>
+              </div>
+              <div class="schedule-row__status">
+                <div class="schedule-row__room">Стая 104</div>
+                <span class="pill pill--done">Приключен</span>
+              </div>
+            </li>
+
+            <li class="schedule-row schedule-row--current">
+              <div class="schedule-row__time">09:45<br>10:25</div>
+              <div class="schedule-row__period">3</div>
+              <div>
+                <div class="schedule-row__subject">Математика</div>
+                <div class="schedule-row__teacher">г-жа Иванова</div>
+              </div>
+              <div class="schedule-row__status">
+                <div class="schedule-row__room">Каб. 302</div>
+                <span class="pill pill--current">В момента</span>
+              </div>
+            </li>
+
+            <li class="schedule-row schedule-row--room-change">
+              <div class="schedule-row__time">10:35<br>11:15</div>
+              <div class="schedule-row__period">4</div>
+              <div>
+                <div class="schedule-row__subject">Биология и ЗО</div>
+                <div class="schedule-row__teacher">г-жа Стоянова</div>
+              </div>
+              <div class="schedule-row__status">
+                <div class="schedule-row__room">
+                  <span class="old-room">101</span><span class="arrow">→</span>204
+                </div>
+                <span class="pill pill--room">Смяна на стая</span>
+              </div>
+            </li>
+
+            <li class="schedule-row schedule-row--late">
+              <div class="schedule-row__time">11:25<br>12:05</div>
+              <div class="schedule-row__period">5</div>
+              <div>
+                <div class="schedule-row__subject">Физика и астрономия</div>
+                <div class="schedule-row__teacher">г-н Петров</div>
+              </div>
+              <div class="schedule-row__status">
+                <div class="schedule-row__room">Стая 305</div>
+                <span class="pill pill--late">Закъснява</span>
+              </div>
+            </li>
+
+            <li class="schedule-row schedule-row--cancelled">
+              <div class="schedule-row__time">12:15<br>12:55</div>
+              <div class="schedule-row__period">6</div>
+              <div>
+                <div class="schedule-row__subject">Английски език</div>
+                <div class="schedule-row__teacher">г-н Василев</div>
+              </div>
+              <div class="schedule-row__status">
+                <div class="schedule-row__room">Стая 201</div>
+                <span class="pill pill--cancel">Отменен</span>
+              </div>
+            </li>
+
+            <li class="schedule-row">
+              <div class="schedule-row__time">13:05<br>13:45</div>
+              <div class="schedule-row__period">7</div>
+              <div>
+                <div class="schedule-row__subject">Физическо възпитание</div>
+                <div class="schedule-row__teacher">г-н Георгиев</div>
+              </div>
+              <div class="schedule-row__status">
+                <div class="schedule-row__room">Физк. салон</div>
+                <span class="pill pill--upcoming">Предстои</span>
+              </div>
+            </li>
+
+          </ol>
+        </section>
+
+        <!-- Teacher locator -->
+        <aside>
+          <section class="card">
+            <div class="card__header">
+              <h2 class="card__title">Къде са учителите</h2>
+            </div>
+            <div class="teacher-search">
+              <input type="search" placeholder="Търси преподавател…" aria-label="Търси преподавател">
+            </div>
+            <ul class="teacher-list">
+
+              <li class="teacher-item">
+                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#5b8def,#3a6fd8)">ЕИ</div>
+                <div class="teacher-item__info">
+                  <div class="teacher-item__name">г-жа Иванова</div>
+                  <div class="teacher-item__subject">Математика</div>
+                </div>
+                <div class="teacher-item__status">
+                  <div class="teacher-status teacher-status--in-class">В час</div>
+                  <div class="teacher-item__location">Каб. 302</div>
+                </div>
+              </li>
+
+              <li class="teacher-item">
+                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#e8a820,#d4880a)">ПП</div>
+                <div class="teacher-item__info">
+                  <div class="teacher-item__name">г-н Петров</div>
+                  <div class="teacher-item__subject">Физика</div>
+                </div>
+                <div class="teacher-item__status">
+                  <div class="teacher-status teacher-status--late">Закъснява</div>
+                  <div class="teacher-item__location">Учителска стая</div>
+                </div>
+              </li>
+
+              <li class="teacher-item">
+                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#7c5cbf,#5e3fa0)">СС</div>
+                <div class="teacher-item__info">
+                  <div class="teacher-item__name">г-жа Стоянова</div>
+                  <div class="teacher-item__subject">Биология</div>
+                </div>
+                <div class="teacher-item__status">
+                  <div class="teacher-status teacher-status--in-class">В час</div>
+                  <div class="teacher-item__location">Стая 204</div>
+                </div>
+              </li>
+
+              <li class="teacher-item">
+                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#6b6560,#4a4540)">МД</div>
+                <div class="teacher-item__info">
+                  <div class="teacher-item__name">г-н Димитров</div>
+                  <div class="teacher-item__subject">История</div>
+                </div>
+                <div class="teacher-item__status">
+                  <div class="teacher-status teacher-status--free">Свободен</div>
+                  <div class="teacher-item__location">Стая 104</div>
+                </div>
+              </li>
+
+              <li class="teacher-item">
+                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#d14343,#a83030)">ИВ</div>
+                <div class="teacher-item__info">
+                  <div class="teacher-item__name">г-н Василев</div>
+                  <div class="teacher-item__subject">Английски език</div>
+                </div>
+                <div class="teacher-item__status">
+                  <div class="teacher-status teacher-status--absent">Отсъства</div>
+                  <div class="teacher-item__location">—</div>
+                </div>
+              </li>
+
+              <li class="teacher-item">
+                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#2d9f6f,#1e7a54)">АК</div>
+                <div class="teacher-item__info">
+                  <div class="teacher-item__name">г-жа Колева</div>
+                  <div class="teacher-item__subject">Български език</div>
+                </div>
+                <div class="teacher-item__status">
+                  <div class="teacher-status teacher-status--free">Свободна</div>
+                  <div class="teacher-item__location">Библиотека</div>
+                </div>
+              </li>
+
+              <li class="teacher-item">
+                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#e85d4c,#c94435)">БГ</div>
+                <div class="teacher-item__info">
+                  <div class="teacher-item__name">г-н Георгиев</div>
+                  <div class="teacher-item__subject">Физическо възпитание</div>
+                </div>
+                <div class="teacher-item__status">
+                  <div class="teacher-status teacher-status--free">Свободен</div>
+                  <div class="teacher-item__location">Физк. салон</div>
+                </div>
+              </li>
+
+            </ul>
+          </section>
+
+          <div class="school-message">
+            <div class="school-message__title">Съобщение от училището</div>
+            Библиотеката работи с удължено работно време до 18:30 ч. тази седмица за подготовка за матурите.
+          </div>
+        </aside>
+
+      </div>
+
+      <footer class="page-footer">
+        SchoolPulse · Демонстрационни данни · Профил: ученик · 10А — СУ „Христо Ботев", гр. Пловдив
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>
