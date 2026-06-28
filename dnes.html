@@ -6,202 +6,190 @@
   <title>SchoolPulse — Днес</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/app.css">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <div class="phone">
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">SCHOOLPULSE</a>
+      <nav class="nav__links">
+        <a href="index.html" class="nav__link">Начало</a>
+        <a href="dnes.html" class="nav__link nav__link--on">Днес</a>
+        <a href="updates.html" class="nav__link">Промени</a>
+        <a href="directory.html" class="nav__link">Учители</a>
+        <a href="admin.html" class="nav__link">Админ</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- STATUS BAR -->
-    <div class="statusbar">
-      <span>09:41</span>
-      <span class="statusbar__icons">
-        <span class="sig"><i></i><i></i><i></i><i></i></span>
-        <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 11.5l1.5-1.8a2 2 0 0 0-3 0L8 11.5zM3 6.2a7.5 7.5 0 0 1 10 0l-1.4 1.6a5.3 5.3 0 0 0-7.2 0L3 6.2zM.5 3.3a11 11 0 0 1 15 0L14 4.9a8.8 8.8 0 0 0-12 0L.5 3.3z" fill="#fff"/></svg>
-        <span class="batt"></span>
-      </span>
+  <main class="wrap">
+
+    <div class="phead">
+      <div class="phead__row">
+        <h1 class="phead__title d">Добро утро,<br>Селин</h1>
+        <a href="updates.html" class="phead__link">Виж всички промени ↗</a>
+      </div>
+      <p class="phead__sub">10А · петък, 27 юни 2026 · <span style="color:var(--green);font-weight:700">● на живо</span>, обновено преди <span id="sync-ago">12</span> сек</p>
     </div>
 
-    <!-- HEADER -->
-    <header class="head">
-      <div class="head__top">
-        <div class="head__brand"><span class="head__logo">SP</span> SchoolPulse</div>
-        <div class="head__actions">
-          <button class="iconbtn" aria-label="Известия">🔔<span class="dotred"></span></button>
-          <span class="avatar">СМ</span>
-        </div>
+    <!-- NOW -->
+    <section class="snow">
+      <div class="snow__top">
+        <span class="snow__tag">Сега · 3-ти час</span>
+        <span class="snow__timer" id="countdown">17:51</span>
       </div>
-      <nav class="tabs">
-        <a href="dnes.html" class="tab tab--on">ДНЕС</a>
-        <a href="#" class="tab">СЕДМИЦА</a>
-        <a href="directory.html" class="tab">УЧИТЕЛИ</a>
-        <a href="updates.html" class="tab">ПРОМЕНИ</a>
-      </nav>
-    </header>
+      <h2 class="snow__subject">Математика</h2>
+      <p class="snow__topic">Квадратни уравнения — неравенства</p>
+      <p class="snow__meta">г-жа Иванова · кабинет 302 · 09:45 – 10:25</p>
+      <div class="snow__bar"><div class="snow__bar-fill" id="progress-fill" style="width:55%"></div></div>
+      <p class="snow__left">Остават <strong id="mins-left">17</strong> минути · <span id="progress-pct">55</span>% от часа</p>
+    </section>
 
-    <main class="main">
+    <div class="today">
 
-      <!-- GREETING -->
-      <section class="greet">
-        <h1 class="greet__title">Добро утро, Селин</h1>
-        <p class="greet__sub">Петък, 27 юни 2025 · 10А клас</p>
-        <span class="greet__live"><span class="dot"></span> На живо · обновено преди <span id="sync-ago">19</span> сек</span>
-      </section>
+      <!-- LEFT: schedule -->
+      <div class="tcol">
+        <section class="box">
+          <div class="box__head">
+            <span class="box__title">Програма за деня</span>
+            <span class="box__meta">7 часа · 3 промени</span>
+          </div>
+          <div class="drow drow--done">
+            <span class="drow__time">08:00 <small>08:40</small></span>
+            <div><p class="drow__name">📚 Български език и литература</p><p class="drow__sub">г-жа Колева · стая 207</p></div>
+            <span class="spill spill--done">Приключи</span>
+          </div>
+          <div class="drow drow--done">
+            <span class="drow__time">08:50 <small>09:30</small></span>
+            <div><p class="drow__name">🌍 История и цивилизации</p><p class="drow__sub">г-н Димитров · стая 104</p></div>
+            <span class="spill spill--done">Приключи</span>
+          </div>
+          <div class="drow drow--now">
+            <span class="drow__time">09:45 <small>10:25</small></span>
+            <div><p class="drow__name">📐 Математика</p><p class="drow__sub">г-жа Иванова · кабинет 302</p></div>
+            <span class="spill spill--now">Сега</span>
+          </div>
+          <div class="drow">
+            <span class="drow__time">10:35 <small>11:15</small></span>
+            <div><p class="drow__name">🌿 Биология и ЗО</p><p class="drow__sub">г-жа Стоянова · <s>101</s> → 204</p></div>
+            <span class="spill spill--room">Смяна</span>
+          </div>
+          <div class="drow">
+            <span class="drow__time">11:25 <small>12:05</small></span>
+            <div><p class="drow__name">🔬 Физика и астрономия</p><p class="drow__sub">г-н Петров · стая 305</p></div>
+            <span class="spill spill--late">Закъснява</span>
+          </div>
+          <div class="drow drow--cancel">
+            <span class="drow__time">12:15 <small>12:55</small></span>
+            <div><p class="drow__name">📝 Английски език</p><p class="drow__sub">г-н Василев · стая 201</p></div>
+            <span class="spill spill--cancel">Отменен</span>
+          </div>
+          <div class="drow">
+            <span class="drow__time">13:05 <small>13:45</small></span>
+            <div><p class="drow__name">⚽ Физическо възпитание</p><p class="drow__sub">г-н Георгиев · физк. салон</p></div>
+            <span class="spill spill--next">Следва</span>
+          </div>
+        </section>
+      </div>
 
-      <!-- STATS -->
-      <section class="stats">
-        <div class="stat"><div class="stat__ic">📚</div><div class="stat__num">7</div><div class="stat__lbl">Часа днес</div></div>
-        <div class="stat"><div class="stat__ic">🔄</div><div class="stat__num">3</div><div class="stat__lbl">Промени днес</div></div>
-        <div class="stat"><div class="stat__ic">❌</div><div class="stat__num">1</div><div class="stat__lbl">Отменен днес</div></div>
-        <div class="stat"><div class="stat__ic">⏱️</div><div class="stat__num stat__num--sm" id="day-end-left">3ч 37м</div><div class="stat__lbl">До края</div></div>
-      </section>
+      <!-- RIGHT: next + changes + teachers + announcement -->
+      <div class="tcol">
 
-      <!-- NOW -->
-      <section class="now">
-        <p class="now__tag">⚡ СЕГА · 3-ТИ ЧАС</p>
-        <h2 class="now__subject">Математика</h2>
-        <p class="now__topic">Квадратни уравнения — неравенства</p>
-        <p class="now__meta">👩‍🏫 г-жа Иванова · 📍 каб. 302</p>
-        <p class="now__timer">⏱️ Остават <span id="mins-left">17</span> минути · <span id="progress-pct">55</span>%</p>
-        <div class="now__bar"><div class="now__bar-fill" id="progress-fill" style="width:55%"></div></div>
-        <p class="now__range">09:45 – 10:25 · <span id="countdown">17:51</span></p>
-      </section>
+        <section class="box">
+          <div class="box__head"><span class="box__title">Следващ час · 10:35</span></div>
+          <div class="drow" style="border:none">
+            <span class="drow__time" style="width:auto">🌿</span>
+            <div><p class="drow__name">Биология и ЗО</p><p class="drow__sub">г-жа Стоянова · <s>101</s> → 204</p></div>
+            <span class="spill spill--room">Смяна</span>
+          </div>
+        </section>
 
-      <!-- NEXT -->
-      <section class="next">
-        <p class="next__lbl">➡️ СЛЕДВАЩ · 10:35</p>
-        <div class="next__row">
-          <div>
-            <p class="next__subject">Биология и ЗО</p>
-            <p class="next__meta">г-жа Стоянова · 101 → 204</p>
+        <section class="box">
+          <div class="box__head"><span class="box__title">Промени днес</span><span class="box__meta">преди 2 мин</span></div>
+          <div class="crow crow--late">
+            <div class="crow__top"><span class="crow__type">Закъснение</span><span class="crow__time">09:42</span></div>
+            <p class="crow__text">г-н Петров закъснява ~10 мин за Физика (5-ти час) · каб. 305</p>
           </div>
-          <span class="pill pill--purple">Смяна</span>
-        </div>
-      </section>
+          <div class="crow crow--room">
+            <div class="crow__top"><span class="crow__type">Смяна на стая</span><span class="crow__time">08:15</span></div>
+            <p class="crow__text">Биология ще е в каб. 204 вместо 101</p>
+          </div>
+          <div class="crow crow--cancel">
+            <div class="crow__top"><span class="crow__type">Отменен час</span><span class="crow__time">07:48</span></div>
+            <p class="crow__text">Английски език (6-ти час) е отменен за днес</p>
+          </div>
+          <a href="updates.html" class="box__link">Виж всички промени →</a>
+        </section>
 
-      <!-- LIVE CHANGES -->
-      <section>
-        <div class="sec"><span class="sec__title">🔄 ПРОМЕНИ НА ЖИВО</span><span class="sec__meta">преди 2 мин</span></div>
-        <div class="feed">
-          <article class="chg chg--amber">
-            <p class="chg__title">⚠️ ЗАКЪСНЕНИЕ · 09:42</p>
-            <p class="chg__desc">г-н Петров закъснява ~10 мин за Физика (5-ти час)</p>
-            <p class="chg__extra">📍 каб. 305</p>
-          </article>
-          <article class="chg chg--purple">
-            <p class="chg__title">🔄 СМЯНА НА СТАЯ · 08:15</p>
-            <p class="chg__desc">Биология ще се проведе в каб. 204 вместо 101</p>
-            <p class="chg__extra chg__extra--ok">✅ потвърдено</p>
-          </article>
-          <article class="chg chg--red">
-            <p class="chg__title">❌ ОТМЕНЕН ЧАС · 07:48</p>
-            <p class="chg__desc">Английски език (6-ти час) е отменен за днес</p>
-            <p class="chg__extra">📝 г-н Василев</p>
-          </article>
-        </div>
-        <a href="updates.html" class="feed__link">Виж всички промени →</a>
-      </section>
+        <section class="box">
+          <div class="box__head"><span class="box__title">Къде са учителите</span><a href="directory.html" class="box__meta" style="text-decoration:none">всички ↗</a></div>
+          <div class="tmini">
+            <img src="assets/img/tp-1.png" alt="">
+            <div class="tmini__info"><p class="tmini__name">г-жа Иванова</p><p class="tmini__sub">Математика · каб. 302</p></div>
+            <span class="tmini__st tmini__st--green">В час</span>
+          </div>
+          <div class="tmini">
+            <img src="assets/img/tp-2.png" alt="">
+            <div class="tmini__info"><p class="tmini__name">г-н Петров</p><p class="tmini__sub">Физика · уч. стая</p></div>
+            <span class="tmini__st tmini__st--amber">Закъснява</span>
+          </div>
+          <div class="tmini">
+            <img src="assets/img/tp-4.png" alt="">
+            <div class="tmini__info"><p class="tmini__name">г-жа Стоянова</p><p class="tmini__sub">Биология · стая 204</p></div>
+            <span class="tmini__st tmini__st--green">В час</span>
+          </div>
+          <div class="tmini">
+            <img src="assets/img/tp-5.png" alt="">
+            <div class="tmini__info"><p class="tmini__name">г-н Василев</p><p class="tmini__sub">Английски</p></div>
+            <span class="tmini__st tmini__st--red">Отсъства</span>
+          </div>
+          <a href="directory.html" class="box__link">Виж всички учители →</a>
+        </section>
 
-      <!-- SCHEDULE -->
-      <section>
-        <div class="sec"><span class="sec__title">📋 ДНЕВЕН ГРАФИК</span><span class="sec__meta">7 часа</span></div>
-        <div class="sched">
-          <div class="row row--done">
-            <span class="row__time">08:00</span>
-            <div class="row__main"><span class="row__ic">📚</span><div><p class="row__name">Български език</p><p class="row__sub">г-жа Колева · 207</p></div></div>
-            <span class="pill pill--green">Приключен</span>
-          </div>
-          <div class="row row--done">
-            <span class="row__time">08:50</span>
-            <div class="row__main"><span class="row__ic">🌍</span><div><p class="row__name">История</p><p class="row__sub">г-н Димитров · 104</p></div></div>
-            <span class="pill pill--green">Приключен</span>
-          </div>
-          <div class="row row--now">
-            <span class="row__time">09:45</span>
-            <div class="row__main"><span class="row__ic">📐</span><div><p class="row__name">Математика</p><p class="row__sub">г-жа Иванова · 302</p></div></div>
-            <span class="pill pill--blue">В момента</span>
-          </div>
-          <div class="row">
-            <span class="row__time">10:35</span>
-            <div class="row__main"><span class="row__ic">🌿</span><div><p class="row__name">Биология и ЗО</p><p class="row__sub">г-жа Стоянова · <s>101</s>→204</p></div></div>
-            <span class="pill pill--purple">Смяна</span>
-          </div>
-          <div class="row">
-            <span class="row__time">11:25</span>
-            <div class="row__main"><span class="row__ic">🔬</span><div><p class="row__name">Физика</p><p class="row__sub">г-н Петров · 305</p></div></div>
-            <span class="pill pill--amber">Закъснява</span>
-          </div>
-          <div class="row row--cancel">
-            <span class="row__time">12:15</span>
-            <div class="row__main"><span class="row__ic">📝</span><div><p class="row__name">Английски език</p><p class="row__sub">г-н Василев · 201</p></div></div>
-            <span class="pill pill--red">Отменен</span>
-          </div>
-          <div class="row">
-            <span class="row__time">13:05</span>
-            <div class="row__main"><span class="row__ic">⚽</span><div><p class="row__name">Физическо</p><p class="row__sub">г-н Георгиев · салон</p></div></div>
-            <span class="pill pill--gray">Предстои</span>
-          </div>
-        </div>
-      </section>
+        <section class="box">
+          <div class="box__head"><span class="box__title">Съобщение</span></div>
+          <p class="crow__text" style="padding:1rem 1.2rem;border:none">📢 Библиотеката работи до 18:30 ч. тази седмица за подготовка за матурите. Успех!</p>
+        </section>
 
-      <!-- TEACHER LOCATOR -->
-      <section>
-        <div class="sec"><span class="sec__title">👨‍🏫 КЪДЕ СА УЧИТЕЛИТЕ</span></div>
-        <div class="search">🔍 <input type="search" placeholder="Търси преподавател…"></div>
-        <div class="tlist">
-          <div class="tcard">
-            <span class="tcard__av" style="background:#4a6cf7">ЕИ<span class="sd sd--green"></span></span>
-            <div class="tcard__info"><p class="tcard__name">г-жа Елена Иванова</p><p class="tcard__sub">Математика · каб. 302</p></div>
-            <span class="tcard__st st--green">В ЧАС</span>
-          </div>
-          <div class="tcard">
-            <span class="tcard__av" style="background:#6c63ff">ПП<span class="sd sd--green"></span></span>
-            <div class="tcard__info"><p class="tcard__name">г-н Петър Петров</p><p class="tcard__sub">Физика · каб. 305</p></div>
-            <span class="tcard__st st--green">В ЧАС</span>
-          </div>
-          <div class="tcard">
-            <span class="tcard__av" style="background:#10b981">МД<span class="sd sd--amber"></span></span>
-            <div class="tcard__info"><p class="tcard__name">г-н Митко Димитров</p><p class="tcard__sub">История · стая 104</p></div>
-            <span class="tcard__st st--amber">СВОБОДЕН</span>
-          </div>
-          <div class="tcard">
-            <span class="tcard__av" style="background:#8b5cf6">СС<span class="sd sd--green"></span></span>
-            <div class="tcard__info"><p class="tcard__name">г-жа Светла Стоянова</p><p class="tcard__sub">Биология · каб. 204</p></div>
-            <span class="tcard__st st--green">В ЧАС</span>
-          </div>
-          <div class="tcard">
-            <span class="tcard__av" style="background:#ef4444">ИВ<span class="sd sd--red"></span></span>
-            <div class="tcard__info"><p class="tcard__name">г-н Иван Василев</p><p class="tcard__sub">Английски · отсъства</p></div>
-            <span class="tcard__st st--red">ОТСЪСТВА</span>
-          </div>
-          <div class="tcard">
-            <span class="tcard__av" style="background:#f59e0b">БГ<span class="sd sd--amber"></span></span>
-            <div class="tcard__info"><p class="tcard__name">г-н Борис Георгиев</p><p class="tcard__sub">Физическо · салон</p></div>
-            <span class="tcard__st st--amber">СВОБОДЕН</span>
-          </div>
-        </div>
-      </section>
+      </div>
 
-      <!-- ANNOUNCEMENT -->
-      <section class="announce">
-        <button class="announce__x" aria-label="Затвори">✕</button>
-        <p class="announce__title">📢 СЪОБЩЕНИЕ ОТ УЧИЛИЩЕТО</p>
-        <p class="announce__text">Библиотеката работи с удължено работно време до 18:30 ч. тази седмица за подготовка за матурите.</p>
-      </section>
+    </div>
+  </main>
 
-    </main>
-
-    <!-- BOTTOM NAV -->
-    <nav class="botnav">
-      <a href="dnes.html" class="botnav__item botnav__item--on"><span>🏠</span>Днес</a>
-      <a href="#" class="botnav__item"><span>📅</span>Седмица</a>
-      <a href="directory.html" class="botnav__item"><span>👨‍🏫</span>Учители</a>
-      <a href="updates.html" class="botnav__item"><span>🔄</span>Промени</a>
-      <a href="#" class="botnav__item"><span>⚙️</span>Настройки</a>
-    </nav>
-
-  </div>
+  <footer class="foot">
+    <div class="wrap foot__grid">
+      <div>
+        <div class="foot__brand">SCHOOLPULSE</div>
+        <p class="foot__about">Централна платформа за координация в реално време — програма, промени и прозрачност за цялото училище.</p>
+      </div>
+      <div class="foot__col">
+        <h4>Навигация</h4>
+        <a href="index.html">Начало</a>
+        <a href="dnes.html">Днес</a>
+        <a href="updates.html">Промени</a>
+        <a href="directory.html">Учители</a>
+        <a href="admin.html">Админ</a>
+      </div>
+      <div class="foot__col">
+        <h4>Помощ</h4>
+        <a href="#">Помощен център</a>
+        <a href="#">Как се използва</a>
+        <a href="#">Обратна връзка</a>
+      </div>
+      <div class="foot__col">
+        <h4>Контакт</h4>
+        <p>✉ support@schoolpulse.bg</p>
+        <p>☎ 0700 10 000</p>
+        <p>📍 СУ „Христо Ботев", Пловдив</p>
+      </div>
+    </div>
+    <div class="wrap foot__bar">
+      <span>© 2026 SchoolPulse · демонстрационни данни</span>
+      <span>Изработено за НОИТ 2025–26</span>
+    </div>
+  </footer>
 
   <script src="js/app.js"></script>
 </body>
