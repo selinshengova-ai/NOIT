@@ -6,7 +6,7 @@
   <title>SchoolPulse — Днес</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@1,9..144,500;0,9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,6 +21,7 @@
         <a href="directory.html" class="nav__link">Учители</a>
         <a href="admin.html" class="nav__link">Админ</a>
       </nav>
+      <a href="#" class="btn btn--ghost btn--sm">СМ · 10А</a>
     </div>
   </header>
 
@@ -31,13 +32,13 @@
         <div>
           <p class="ph__k">петък, 27 юни 2026</p>
           <h1 class="ph__t">Добро утро, Селин</h1>
-          <p class="ph__s">10А клас · <span style="color:var(--green);font-weight:700">● на живо</span>, обновено преди <span id="sync-ago">12</span> сек</p>
+          <p class="ph__s">10А клас · <span style="color:#6ee7b7;font-weight:600">● на живо</span>, обновено преди <span id="sync-ago">12</span> сек</p>
         </div>
         <a href="updates.html" class="ph__link">Виж всички промени →</a>
       </div>
     </div>
 
-    <section class="stats" style="margin-bottom:1.5rem">
+    <section class="stats" style="margin-bottom:1.4rem">
       <div class="stat"><div class="stat__ic ic--blue">📚</div><div class="stat__n">7</div><div class="stat__l">часа днес</div></div>
       <div class="stat"><div class="stat__ic ic--violet">🔄</div><div class="stat__n">3</div><div class="stat__l">промени днес</div></div>
       <div class="stat"><div class="stat__ic ic--red">⊘</div><div class="stat__n">1</div><div class="stat__l">отменен час</div></div>
@@ -47,7 +48,7 @@
     <div class="grid2">
       <div class="col">
         <section class="now">
-          <div class="now__top"><span class="now__tag">⚡ Сега · 3-ти час</span><span class="now__timer" id="countdown">17:51</span></div>
+          <div class="now__top"><span class="now__tag">⚡ СЕГА · 3-ти час</span><span class="now__timer" id="countdown">17:51</span></div>
           <h2 class="now__subj">Математика</h2>
           <p class="now__topic">Квадратни уравнения — неравенства</p>
           <p class="now__meta">г-жа Иванова · кабинет 302 · 09:45 – 10:25</p>
@@ -56,11 +57,11 @@
         </section>
 
         <section class="card">
-          <div class="card__h"><span class="card__t">Програма за деня</span><span class="card__m">7 часа · 3 промени</span></div>
+          <div class="card__h"><span class="card__t">📋 Програма за деня</span><span class="card__m">7 часа · 3 промени</span></div>
           <div class="sched">
             <div class="row row--done"><span class="row__time">08:00<small>08:40</small></span><div class="row__main"><span class="row__ic">📚</span><div><div class="row__s">Български език и литература</div><div class="row__sub">г-жа Колева · стая 207</div></div></div><span class="pill pill--green">Приключи</span></div>
             <div class="row row--done"><span class="row__time">08:50<small>09:30</small></span><div class="row__main"><span class="row__ic">🌍</span><div><div class="row__s">История и цивилизации</div><div class="row__sub">г-н Димитров · стая 104</div></div></div><span class="pill pill--green">Приключи</span></div>
-            <div class="row row--now"><span class="row__time">09:45<small>10:25</small></span><div class="row__main"><span class="row__ic">📐</span><div><div class="row__s">Математика</div><div class="row__sub">г-жа Иванова · кабинет 302</div></div></div><span class="pill pill--accent">Сега</span></div>
+            <div class="row row--now"><span class="row__time">09:45<small>10:25</small></span><div class="row__main"><span class="row__ic">📐</span><div><div class="row__s">Математика</div><div class="row__sub">г-жа Иванова · кабинет 302</div></div></div><span class="pill pill--blue">В момента</span></div>
             <div class="row"><span class="row__time">10:35<small>11:15</small></span><div class="row__main"><span class="row__ic">🌿</span><div><div class="row__s">Биология и ЗО</div><div class="row__sub">г-жа Стоянова · <s>101</s> → 204</div></div></div><span class="pill pill--violet">Смяна</span></div>
             <div class="row"><span class="row__time">11:25<small>12:05</small></span><div class="row__main"><span class="row__ic">🔬</span><div><div class="row__s">Физика и астрономия</div><div class="row__sub">г-н Петров · стая 305</div></div></div><span class="pill pill--amber">Закъснява</span></div>
             <div class="row row--cancel"><span class="row__time">12:15<small>12:55</small></span><div class="row__main"><span class="row__ic">📝</span><div><div class="row__s">Английски език</div><div class="row__sub">г-н Василев · стая 201</div></div></div><span class="pill pill--red">Отменен</span></div>
@@ -71,26 +72,26 @@
 
       <div class="col">
         <section class="card next">
-          <p class="next__k">Следващ час · 10:35</p>
+          <p class="next__k">➡️ Следващ час · 10:35</p>
           <div class="next__row"><div><div class="next__s">🌿 Биология и ЗО</div><div class="next__m">г-жа Стоянова · стая 101 → 204</div></div><span class="pill pill--violet">Смяна</span></div>
         </section>
 
         <section class="card">
-          <div class="card__h"><span class="card__t">Промени днес</span><span class="card__m">преди 2 мин</span></div>
+          <div class="card__h"><span class="card__t">🔄 Промени днес</span><span class="card__m">преди 2 мин</span></div>
           <div class="feed">
-            <div class="chg chg--amber"><div class="chg__top"><span class="chg__t">Закъснение</span><span class="chg__time">09:42</span></div><p class="chg__d">г-н Петров закъснява ~10 мин за Физика (5-ти час)</p><p class="chg__x">📍 каб. 305</p></div>
-            <div class="chg chg--violet"><div class="chg__top"><span class="chg__t">Смяна на стая</span><span class="chg__time">08:15</span></div><p class="chg__d">Биология ще е в каб. 204 вместо 101</p></div>
-            <div class="chg chg--red"><div class="chg__top"><span class="chg__t">Отменен час</span><span class="chg__time">07:48</span></div><p class="chg__d">Английски език (6-ти час) е отменен за днес</p></div>
+            <div class="chg chg--amber"><div class="chg__top"><span class="chg__t">⚠️ Закъснение</span><span class="chg__time">09:42</span></div><p class="chg__d">г-н Петров закъснява ~10 мин за Физика (5-ти час)</p><p class="chg__x">📍 каб. 305</p></div>
+            <div class="chg chg--violet"><div class="chg__top"><span class="chg__t">🚪 Смяна на стая</span><span class="chg__time">08:15</span></div><p class="chg__d">Биология ще е в каб. 204 вместо 101</p></div>
+            <div class="chg chg--red"><div class="chg__top"><span class="chg__t">❌ Отменен час</span><span class="chg__time">07:48</span></div><p class="chg__d">Английски език (6-ти час) е отменен за днес</p></div>
           </div>
           <a href="updates.html" class="card__link">Виж всички промени →</a>
         </section>
 
         <section class="card">
-          <div class="card__h"><span class="card__t">Къде са учителите</span><a href="directory.html" class="card__m" style="color:var(--accent)">всички →</a></div>
-          <div class="tmini"><img src="assets/img/tp-1.png" alt="г-жа Иванова"><div class="tmini__i"><div class="tmini__n">г-жа Иванова</div><div class="tmini__s">Математика · каб. 302</div></div><span class="status status--green">В час</span></div>
-          <div class="tmini"><img src="assets/img/tp-2.png" alt="г-н Петров"><div class="tmini__i"><div class="tmini__n">г-н Петров</div><div class="tmini__s">Физика · уч. стая</div></div><span class="status status--amber">Закъснява</span></div>
-          <div class="tmini"><img src="assets/img/tp-4.png" alt="г-жа Стоянова"><div class="tmini__i"><div class="tmini__n">г-жа Стоянова</div><div class="tmini__s">Биология · стая 204</div></div><span class="status status--green">В час</span></div>
-          <div class="tmini"><img src="assets/img/tp-5.png" alt="г-н Василев"><div class="tmini__i"><div class="tmini__n">г-н Василев</div><div class="tmini__s">Английски</div></div><span class="status status--red">Отсъства</span></div>
+          <div class="card__h"><span class="card__t">👨‍🏫 Къде са учителите</span><a href="directory.html" class="card__m" style="color:#93c5fd">всички →</a></div>
+          <div class="tmini"><span class="tmini__pic"><img src="assets/img/tp-1.png" alt="г-жа Иванова"><span class="sd sd--green"></span></span><div class="tmini__i"><div class="tmini__n">г-жа Иванова</div><div class="tmini__s">Математика · каб. 302</div></div><span class="status status--green">В час</span></div>
+          <div class="tmini"><span class="tmini__pic"><img src="assets/img/tp-2.png" alt="г-н Петров"><span class="sd sd--amber"></span></span><div class="tmini__i"><div class="tmini__n">г-н Петров</div><div class="tmini__s">Физика · уч. стая</div></div><span class="status status--amber">Закъснява</span></div>
+          <div class="tmini"><span class="tmini__pic"><img src="assets/img/tp-4.png" alt="г-жа Стоянова"><span class="sd sd--green"></span></span><div class="tmini__i"><div class="tmini__n">г-жа Стоянова</div><div class="tmini__s">Биология · стая 204</div></div><span class="status status--green">В час</span></div>
+          <div class="tmini"><span class="tmini__pic"><img src="assets/img/tp-5.png" alt="г-н Василев"><span class="sd sd--red"></span></span><div class="tmini__i"><div class="tmini__n">г-н Василев</div><div class="tmini__s">Английски</div></div><span class="status status--red">Отсъства</span></div>
         </section>
 
         <div class="announce">
