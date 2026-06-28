@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SchoolPulse — Live Updates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">SCHOOLPULSE</a>
+      <nav class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="updates.html" class="nav__link nav__link--on">Updates</a>
+        <a href="directory.html" class="nav__link">Directory</a>
+        <a href="admin.html" class="nav__link">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <div class="phead">
+      <div class="phead__row">
+        <h1 class="phead__title d">Live<br>Updates</h1>
+        <a href="#" class="phead__link">View all log ↗</a>
+      </div>
+      <p class="phead__sub">Real-time schedule changes, delays and cancellations across campus.</p>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filters">
+      <span class="select">▾&nbsp; <select><option>All roles</option><option>Students</option><option>Faculty</option></select></span>
+      <span class="select">▾&nbsp; <select><option>All types</option><option>Room change</option><option>Cancellation</option><option>Delay</option></select></span>
+      <span class="filters__spacer"></span>
+      <a href="admin.html" class="btn btn--solid">+ Post update</a>
+    </div>
+
+    <!-- CARDS -->
+    <section class="cards">
+
+      <article class="ucard ucard--urgent">
+        <div class="ucard__tags">
+          <span class="tag tag--green">Room change</span>
+          <span class="tag tag--urgent">Urgent</span>
+          <span class="ucard__alert">!</span>
+        </div>
+        <h3 class="ucard__title">Room change: Math 101 lecture</h3>
+        <p class="ucard__body">The Math 101 lecture scheduled for 10:00 AM today has been moved from Room 201 to Room 305. Please proceed directly to the new location.</p>
+        <p class="ucard__loc">📍 Room 305</p>
+        <div class="ucard__foot"><span>🕐 26.07 · 12:30</span><span>👥 Target: Student</span></div>
+        <p class="ucard__by">By Academic Affairs</p>
+      </article>
+
+      <article class="ucard ucard--urgent">
+        <div class="ucard__tags">
+          <span class="tag tag--green">Cancellation</span>
+          <span class="tag tag--urgent">Urgent</span>
+          <span class="ucard__alert">!</span>
+        </div>
+        <h3 class="ucard__title">Chemistry lab session cancelled</h3>
+        <p class="ucard__body">The Chemistry 205 lab session scheduled for 1:00 PM today has been cancelled due to equipment malfunction. A make-up session will be announced shortly.</p>
+        <p class="ucard__loc">📍 Lab 2</p>
+        <div class="ucard__foot"><span>🕐 26.07 · 14:00</span><span>👥 Target: Student</span></div>
+        <p class="ucard__by">By Science Department</p>
+      </article>
+
+      <article class="ucard ucard--urgent">
+        <div class="ucard__tags">
+          <span class="tag tag--green">Delay</span>
+          <span class="tag tag--urgent">Urgent</span>
+          <span class="ucard__alert">!</span>
+        </div>
+        <h3 class="ucard__title">English Literature 301 — 30 min delay</h3>
+        <p class="ucard__body">Professor Smith's English Literature 301 class, originally scheduled for 9:00 AM, will now begin at 9:30 AM due to a minor delay. Apologies for any inconvenience.</p>
+        <p class="ucard__loc">📍 Room 405</p>
+        <div class="ucard__foot"><span>🕐 26.07 · 11:45</span><span>👥 Target: Student</span></div>
+        <p class="ucard__by">By Faculty Office</p>
+      </article>
+
+      <article class="ucard">
+        <div class="ucard__tags"><span class="tag tag--green">General announcement</span></div>
+        <h3 class="ucard__title">Library extended hours</h3>
+        <p class="ucard__body">The school library is open until 18:30 this week to support students preparing for state exams. Quiet study rooms are available on the second floor.</p>
+        <p class="ucard__loc">📍 Main Library</p>
+        <div class="ucard__foot"><span>🕐 26.07 · 09:10</span><span>👥 Target: All</span></div>
+        <p class="ucard__by">By Administration</p>
+      </article>
+
+      <article class="ucard">
+        <div class="ucard__tags"><span class="tag tag--green">Teacher absence</span></div>
+        <h3 class="ucard__title">Mr. Vasilev absent today</h3>
+        <p class="ucard__body">English teacher Mr. Vasilev is absent due to illness. The 6th-period English class is cancelled; no substitute is scheduled.</p>
+        <p class="ucard__loc">📍 Room 201</p>
+        <div class="ucard__foot"><span>🕐 26.07 · 07:48</span><span>👥 Target: 10А</span></div>
+        <p class="ucard__by">By Administration</p>
+      </article>
+
+      <article class="ucard ucard--urgent">
+        <div class="ucard__tags">
+          <span class="tag tag--green">Room change</span>
+          <span class="tag tag--urgent">Urgent</span>
+          <span class="ucard__alert">!</span>
+        </div>
+        <h3 class="ucard__title">Biology moved to Room 204</h3>
+        <p class="ucard__body">Today's Biology class for 10А has been relocated from Room 101 to Room 204 for a practical exercise. Please bring your lab notebooks.</p>
+        <p class="ucard__loc">📍 Room 204</p>
+        <div class="ucard__foot"><span>🕐 26.07 · 08:15</span><span>👥 Target: 10А</span></div>
+        <p class="ucard__by">By Ms. Stoyanova</p>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__inner">
+      <span class="foot__brand">SCHOOLPULSE</span>
+      <span class="foot__txt">СУ „Христо Ботев", гр. Пловдив · demonstration data · © 2026</span>
+    </div>
+  </footer>
+
+</body>
+</html>

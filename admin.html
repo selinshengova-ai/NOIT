@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SchoolPulse — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">SCHOOLPULSE</a>
+      <nav class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="updates.html" class="nav__link">Updates</a>
+        <a href="directory.html" class="nav__link">Directory</a>
+        <a href="admin.html" class="nav__link nav__link--on">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <div class="phead">
+      <div class="phead__row">
+        <h1 class="phead__title d">Admin</h1>
+      </div>
+      <p class="phead__sub">Manage user roles, monitor system-wide updates and maintain operational oversight.</p>
+    </div>
+
+    <!-- STATS -->
+    <section class="astats">
+      <div class="astat astat--green">
+        <span class="astat__ic">👥</span>
+        <div><div class="astat__num d">15</div><div class="astat__lbl">Total users</div></div>
+      </div>
+      <div class="astat astat--blue">
+        <span class="astat__ic">🗓</span>
+        <div><div class="astat__num d">10</div><div class="astat__lbl">Total updates</div></div>
+      </div>
+      <div class="astat astat--red">
+        <span class="astat__ic">⚠</span>
+        <div><div class="astat__num d">6</div><div class="astat__lbl">Urgent updates</div></div>
+      </div>
+      <div class="astat astat--green2">
+        <span class="astat__ic">📈</span>
+        <div><div class="astat__num d">11</div><div class="astat__lbl">Active now</div></div>
+      </div>
+    </section>
+
+    <!-- USER MANAGEMENT -->
+    <div class="amgr__head">
+      <h2 class="amgr__title d">User management</h2>
+      <a href="#" class="btn btn--solid">+ Add user</a>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Location</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Elena Ivanova</td><td>e.ivanova@school.bg</td>
+            <td><span class="pill pill--role">Faculty</span></td>
+            <td><span class="pill pill--inclass">In class</span></td>
+            <td>Room 302</td>
+            <td><div class="tactions"><button class="tbtn">✎</button><button class="tbtn tbtn--del">🗑</button></div></td>
+          </tr>
+          <tr>
+            <td>Petar Petrov</td><td>p.petrov@school.bg</td>
+            <td><span class="pill pill--role">Faculty</span></td>
+            <td><span class="pill pill--lunch">Running late</span></td>
+            <td>Staff room</td>
+            <td><div class="tactions"><button class="tbtn">✎</button><button class="tbtn tbtn--del">🗑</button></div></td>
+          </tr>
+          <tr>
+            <td>Mitko Dimitrov</td><td>m.dimitrov@school.bg</td>
+            <td><span class="pill pill--role">Faculty</span></td>
+            <td><span class="pill pill--library">Free</span></td>
+            <td>Room 104</td>
+            <td><div class="tactions"><button class="tbtn">✎</button><button class="tbtn tbtn--del">🗑</button></div></td>
+          </tr>
+          <tr>
+            <td>Selin Mihaylova</td><td>selin.m@school.bg</td>
+            <td><span class="pill pill--role">Student</span></td>
+            <td><span class="pill pill--inclass">In class</span></td>
+            <td>Room 302</td>
+            <td><div class="tactions"><button class="tbtn">✎</button><button class="tbtn tbtn--del">🗑</button></div></td>
+          </tr>
+          <tr>
+            <td>Ivan Vasilev</td><td>i.vasilev@school.bg</td>
+            <td><span class="pill pill--role">Faculty</span></td>
+            <td><span class="pill pill--absent">Absent</span></td>
+            <td>—</td>
+            <td><div class="tactions"><button class="tbtn">✎</button><button class="tbtn tbtn--del">🗑</button></div></td>
+          </tr>
+          <tr>
+            <td>Svetla Stoyanova</td><td>s.stoyanova@school.bg</td>
+            <td><span class="pill pill--role">Faculty</span></td>
+            <td><span class="pill pill--inclass">In class</span></td>
+            <td>Room 204</td>
+            <td><div class="tactions"><button class="tbtn">✎</button><button class="tbtn tbtn--del">🗑</button></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot__inner">
+      <span class="foot__brand">SCHOOLPULSE</span>
+      <span class="foot__txt">СУ „Христо Ботев", гр. Пловдив · demonstration data · © 2026</span>
+    </div>
+  </footer>
+
+</body>
+</html>
