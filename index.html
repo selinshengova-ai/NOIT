@@ -12,7 +12,6 @@
 <body>
   <div class="app">
 
-    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar__logo">
         <div class="sidebar__logo-icon">SP</div>
@@ -42,33 +41,121 @@
       </ul>
     </aside>
 
-    <!-- Main -->
     <main class="main">
 
       <header class="page-header">
         <div>
           <h1 class="page-header__greeting">Добро утро, Селин 👋</h1>
-          <p class="page-header__sub">Петък, 27 юни 2025 · 10А</p>
+          <p class="page-header__sub">Петък, 27 юни 2025 · 10А · последна актуализация преди <span id="sync-ago">12</span> сек</p>
         </div>
         <div class="page-header__actions">
-          <span class="badge badge--changes">2 промени</span>
           <span class="badge badge--live"><span class="pulse"></span> На живо</span>
         </div>
       </header>
 
-      <!-- Single alert — only the most urgent change -->
-      <div class="alert-strip">
-        <span class="alert-strip__icon">⏱</span>
-        <div>
-          <div class="alert-strip__text"><strong>г-н Петров закъснява</strong> за часа по Физика</div>
-          <div class="alert-strip__detail">Физика · 5-ти час · Стая 305 · ~10 мин</div>
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-card__value">7</div>
+          <div class="stat-card__label">Часа днес</div>
         </div>
-        <span class="alert-strip__time">09:42</span>
+        <div class="stat-card stat-card--accent">
+          <div class="stat-card__value">3</div>
+          <div class="stat-card__label">Промени</div>
+        </div>
+        <div class="stat-card stat-card--red">
+          <div class="stat-card__value">1</div>
+          <div class="stat-card__label">Отменен</div>
+        </div>
+        <div class="stat-card stat-card--green">
+          <div class="stat-card__value" id="time-left">3ч 18м</div>
+          <div class="stat-card__label">До край</div>
+        </div>
       </div>
 
+      <!-- Now + Next + Live changes -->
+      <div class="hero-grid">
+
+        <div class="hero-grid__left">
+          <!-- NOW card -->
+          <section class="now-card">
+            <div class="now-card__badge">⚡ Сега · 3-ти час</div>
+            <div class="now-card__body">
+              <div class="now-card__main">
+                <div class="now-card__icon">➗</div>
+                <div>
+                  <h2 class="now-card__subject">Математика</h2>
+                  <p class="now-card__topic">Квадратни уравнения — неравенства. Подготовка за контролна.</p>
+                  <div class="now-card__meta">
+                    <span>👩‍🏫 г-жа Иванова</span>
+                    <span>📍 Каб. 302</span>
+                    <span>🕐 09:45 – 10:25</span>
+                  </div>
+                </div>
+              </div>
+              <div class="now-card__timer">
+                <div class="now-card__timer-value" id="countdown">18:42</div>
+                <div class="now-card__timer-label">остават</div>
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" style="width: 72%"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- NEXT class -->
+          <section class="next-card">
+            <div class="next-card__label">➡️ Следващ · 10:35</div>
+            <div class="next-card__content">
+              <span class="next-card__icon">🌿</span>
+              <div>
+                <div class="next-card__subject">Биология и ЗО</div>
+                <div class="next-card__meta">г-жа Стоянова · <span class="room-change-inline">Стая 101 → 204</span></div>
+              </div>
+              <span class="pill pill--room">Смяна на стая</span>
+            </div>
+          </section>
+        </div>
+
+        <!-- Live changes -->
+        <section class="card changes-card">
+          <div class="card__header">
+            <h2 class="card__title">🔄 Промени на живо</h2>
+            <span class="changes-card__updated">преди 2 мин</span>
+          </div>
+          <ul class="changes-list">
+            <li class="change-item change-item--late">
+              <div class="change-item__time">09:42</div>
+              <div class="change-item__dot"></div>
+              <div class="change-item__content">
+                <div class="change-item__type">Закъснение</div>
+                <div class="change-item__text">г-н Петров закъснява ~10 мин за 5-ти час по Физика</div>
+              </div>
+            </li>
+            <li class="change-item change-item--room">
+              <div class="change-item__time">08:15</div>
+              <div class="change-item__dot"></div>
+              <div class="change-item__content">
+                <div class="change-item__type">Смяна на стая</div>
+                <div class="change-item__text">Биология → Стая 204 вместо 101</div>
+              </div>
+            </li>
+            <li class="change-item change-item--cancel">
+              <div class="change-item__time">07:50</div>
+              <div class="change-item__dot"></div>
+              <div class="change-item__content">
+                <div class="change-item__type">Отмяна</div>
+                <div class="change-item__text">Английски език (6-ти час) е отменен за днес</div>
+              </div>
+            </li>
+          </ul>
+          <a href="#" class="changes-card__link">Виж всички промени →</a>
+        </section>
+      </div>
+
+      <!-- Schedule + Teachers -->
       <div class="content-grid">
 
-        <!-- Daily schedule -->
         <section class="card">
           <div class="card__header">
             <h2 class="card__title">Дневен график</h2>
@@ -78,6 +165,7 @@
             <li class="schedule-row schedule-row--finished">
               <div class="schedule-row__time">08:00<br>08:40</div>
               <div class="schedule-row__period">1</div>
+              <div class="schedule-row__icon">📚</div>
               <div>
                 <div class="schedule-row__subject">Български език и литература</div>
                 <div class="schedule-row__teacher">г-жа Колева</div>
@@ -91,6 +179,7 @@
             <li class="schedule-row schedule-row--finished">
               <div class="schedule-row__time">08:50<br>09:30</div>
               <div class="schedule-row__period">2</div>
+              <div class="schedule-row__icon">🌍</div>
               <div>
                 <div class="schedule-row__subject">История и цивилизации</div>
                 <div class="schedule-row__teacher">г-н Димитров</div>
@@ -104,6 +193,7 @@
             <li class="schedule-row schedule-row--current">
               <div class="schedule-row__time">09:45<br>10:25</div>
               <div class="schedule-row__period">3</div>
+              <div class="schedule-row__icon">➗</div>
               <div>
                 <div class="schedule-row__subject">Математика</div>
                 <div class="schedule-row__teacher">г-жа Иванова</div>
@@ -117,6 +207,7 @@
             <li class="schedule-row schedule-row--room-change">
               <div class="schedule-row__time">10:35<br>11:15</div>
               <div class="schedule-row__period">4</div>
+              <div class="schedule-row__icon">🌿</div>
               <div>
                 <div class="schedule-row__subject">Биология и ЗО</div>
                 <div class="schedule-row__teacher">г-жа Стоянова</div>
@@ -132,6 +223,7 @@
             <li class="schedule-row schedule-row--late">
               <div class="schedule-row__time">11:25<br>12:05</div>
               <div class="schedule-row__period">5</div>
+              <div class="schedule-row__icon">🔬</div>
               <div>
                 <div class="schedule-row__subject">Физика и астрономия</div>
                 <div class="schedule-row__teacher">г-н Петров</div>
@@ -145,6 +237,7 @@
             <li class="schedule-row schedule-row--cancelled">
               <div class="schedule-row__time">12:15<br>12:55</div>
               <div class="schedule-row__period">6</div>
+              <div class="schedule-row__icon">📝</div>
               <div>
                 <div class="schedule-row__subject">Английски език</div>
                 <div class="schedule-row__teacher">г-н Василев</div>
@@ -158,6 +251,7 @@
             <li class="schedule-row">
               <div class="schedule-row__time">13:05<br>13:45</div>
               <div class="schedule-row__period">7</div>
+              <div class="schedule-row__icon">⚽</div>
               <div>
                 <div class="schedule-row__subject">Физическо възпитание</div>
                 <div class="schedule-row__teacher">г-н Георгиев</div>
@@ -171,8 +265,7 @@
           </ol>
         </section>
 
-        <!-- Teacher locator -->
-        <aside>
+        <aside class="sidebar-right">
           <section class="card">
             <div class="card__header">
               <h2 class="card__title">Къде са учителите</h2>
@@ -182,88 +275,64 @@
             </div>
             <ul class="teacher-list">
 
-              <li class="teacher-item">
-                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#5b8def,#3a6fd8)">ЕИ</div>
-                <div class="teacher-item__info">
-                  <div class="teacher-item__name">г-жа Иванова</div>
-                  <div class="teacher-item__subject">Математика</div>
+              <li class="teacher-card">
+                <div class="teacher-card__avatar-wrap">
+                  <div class="teacher-card__photo" style="background: linear-gradient(135deg,#5b8def,#3a6fd8)">ЕИ</div>
+                  <span class="teacher-card__dot teacher-card__dot--green"></span>
                 </div>
-                <div class="teacher-item__status">
-                  <div class="teacher-status teacher-status--in-class">В час</div>
-                  <div class="teacher-item__location">Каб. 302</div>
+                <div class="teacher-card__info">
+                  <div class="teacher-card__name">г-жа Елена Иванова</div>
+                  <div class="teacher-card__detail">📚 Математика · 📍 Каб. 302</div>
                 </div>
+                <span class="teacher-card__badge teacher-card__badge--in-class">В час</span>
               </li>
 
-              <li class="teacher-item">
-                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#e8a820,#d4880a)">ПП</div>
-                <div class="teacher-item__info">
-                  <div class="teacher-item__name">г-н Петров</div>
-                  <div class="teacher-item__subject">Физика</div>
+              <li class="teacher-card">
+                <div class="teacher-card__avatar-wrap">
+                  <div class="teacher-card__photo" style="background: linear-gradient(135deg,#e8a820,#d4880a)">ПП</div>
+                  <span class="teacher-card__dot teacher-card__dot--amber"></span>
                 </div>
-                <div class="teacher-item__status">
-                  <div class="teacher-status teacher-status--late">Закъснява</div>
-                  <div class="teacher-item__location">Учителска стая</div>
+                <div class="teacher-card__info">
+                  <div class="teacher-card__name">г-н Петър Петров</div>
+                  <div class="teacher-card__detail">🔬 Физика · 📍 Учителска стая</div>
                 </div>
+                <span class="teacher-card__badge teacher-card__badge--late">Закъснява</span>
               </li>
 
-              <li class="teacher-item">
-                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#7c5cbf,#5e3fa0)">СС</div>
-                <div class="teacher-item__info">
-                  <div class="teacher-item__name">г-жа Стоянова</div>
-                  <div class="teacher-item__subject">Биология</div>
+              <li class="teacher-card">
+                <div class="teacher-card__avatar-wrap">
+                  <div class="teacher-card__photo" style="background: linear-gradient(135deg,#7c5cbf,#5e3fa0)">СС</div>
+                  <span class="teacher-card__dot teacher-card__dot--green"></span>
                 </div>
-                <div class="teacher-item__status">
-                  <div class="teacher-status teacher-status--in-class">В час</div>
-                  <div class="teacher-item__location">Стая 204</div>
+                <div class="teacher-card__info">
+                  <div class="teacher-card__name">г-жа Светла Стоянова</div>
+                  <div class="teacher-card__detail">🌿 Биология · 📍 Стая 204</div>
                 </div>
+                <span class="teacher-card__badge teacher-card__badge--in-class">В час</span>
               </li>
 
-              <li class="teacher-item">
-                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#6b6560,#4a4540)">МД</div>
-                <div class="teacher-item__info">
-                  <div class="teacher-item__name">г-н Димитров</div>
-                  <div class="teacher-item__subject">История</div>
+              <li class="teacher-card">
+                <div class="teacher-card__avatar-wrap">
+                  <div class="teacher-card__photo" style="background: linear-gradient(135deg,#6b6560,#4a4540)">МД</div>
+                  <span class="teacher-card__dot teacher-card__dot--grey"></span>
                 </div>
-                <div class="teacher-item__status">
-                  <div class="teacher-status teacher-status--free">Свободен</div>
-                  <div class="teacher-item__location">Стая 104</div>
+                <div class="teacher-card__info">
+                  <div class="teacher-card__name">г-н Митко Димитров</div>
+                  <div class="teacher-card__detail">🌍 История · 📍 Стая 104</div>
                 </div>
+                <span class="teacher-card__badge teacher-card__badge--free">Свободен</span>
               </li>
 
-              <li class="teacher-item">
-                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#d14343,#a83030)">ИВ</div>
-                <div class="teacher-item__info">
-                  <div class="teacher-item__name">г-н Василев</div>
-                  <div class="teacher-item__subject">Английски език</div>
+              <li class="teacher-card">
+                <div class="teacher-card__avatar-wrap">
+                  <div class="teacher-card__photo" style="background: linear-gradient(135deg,#d14343,#a83030)">ИВ</div>
+                  <span class="teacher-card__dot teacher-card__dot--red"></span>
                 </div>
-                <div class="teacher-item__status">
-                  <div class="teacher-status teacher-status--absent">Отсъства</div>
-                  <div class="teacher-item__location">—</div>
+                <div class="teacher-card__info">
+                  <div class="teacher-card__name">г-н Иван Василев</div>
+                  <div class="teacher-card__detail">📝 Английски език</div>
                 </div>
-              </li>
-
-              <li class="teacher-item">
-                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#2d9f6f,#1e7a54)">АК</div>
-                <div class="teacher-item__info">
-                  <div class="teacher-item__name">г-жа Колева</div>
-                  <div class="teacher-item__subject">Български език</div>
-                </div>
-                <div class="teacher-item__status">
-                  <div class="teacher-status teacher-status--free">Свободна</div>
-                  <div class="teacher-item__location">Библиотека</div>
-                </div>
-              </li>
-
-              <li class="teacher-item">
-                <div class="teacher-item__photo" style="background: linear-gradient(135deg,#e85d4c,#c94435)">БГ</div>
-                <div class="teacher-item__info">
-                  <div class="teacher-item__name">г-н Георгиев</div>
-                  <div class="teacher-item__subject">Физическо възпитание</div>
-                </div>
-                <div class="teacher-item__status">
-                  <div class="teacher-status teacher-status--free">Свободен</div>
-                  <div class="teacher-item__location">Физк. салон</div>
-                </div>
+                <span class="teacher-card__badge teacher-card__badge--absent">Отсъства</span>
               </li>
 
             </ul>
@@ -283,5 +352,7 @@
 
     </main>
   </div>
+
+  <script src="js/app.js"></script>
 </body>
 </html>
