@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SchoolPulse — Училището на живо</title>
+  <title>SchoolPulse — Училището в реално време</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <header class="nav">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__brand">SCHOOLPULSE</a>
+    <div class="nav__in">
+      <a href="index.html" class="brand"><span class="brand__dot">SP</span> School<b>Pulse</b></a>
       <nav class="nav__links">
         <a href="index.html" class="nav__link nav__link--on">Начало</a>
         <a href="dnes.html" class="nav__link">Днес</a>
@@ -21,126 +21,97 @@
         <a href="directory.html" class="nav__link">Учители</a>
         <a href="admin.html" class="nav__link">Админ</a>
       </nav>
+      <a href="dnes.html" class="btn btn--primary btn--sm nav__cta">Отвори приложението</a>
     </div>
   </header>
 
-  <!-- LIVE TICKER -->
-  <div class="ticker">
-    <div class="ticker__row">
-      <span class="ticker__label">На живо</span>
-      <div class="ticker__mask">
-        <div class="ticker__track">
-          <span>🚪 Биология — <b>стая 101 → 204</b></span>
-          <span>⏱ Физика — <b>г-н Петров закъснява ~10 мин</b></span>
-          <span>❌ Английски (6-ти час) — <b>отменен</b></span>
-          <span>📐 Сега: Математика · каб. 302</span>
-          <span>🚪 Биология — <b>стая 101 → 204</b></span>
-          <span>⏱ Физика — <b>г-н Петров закъснява ~10 мин</b></span>
-          <span>❌ Английски (6-ти час) — <b>отменен</b></span>
-          <span>📐 Сега: Математика · каб. 302</span>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__blob hero__blob--1"></div>
+    <div class="hero__blob hero__blob--2"></div>
+    <div class="wrap hero__in">
+      <div>
+        <span class="eyebrow"><span class="pulse"></span> На живо · обновява се в реално време</span>
+        <h1 class="hero__title">Училището ти,<br><em>в реално време.</em></h1>
+        <p class="hero__sub">Закъснял учител, сменен кабинет или отменен час — виждаш промяната веднага, на едно място. Без слухове по коридора, без изпуснати съобщения.</p>
+        <div class="hero__cta">
+          <a href="dnes.html" class="btn btn--primary">Виж моя ден →</a>
+          <a href="updates.html" class="btn btn--ghost">Промени на живо</a>
+        </div>
+        <div class="hero__meta">
+          <div class="hero__metric">142<span>потребители</span></div>
+          <div class="hero__metric">7<span>учебни часа днес</span></div>
+          <div class="hero__metric">&lt;5 сек<span>до известие</span></div>
+        </div>
+      </div>
+
+      <!-- product preview -->
+      <div class="preview">
+        <div class="preview__bar">
+          <strong style="font-family:'Sora';font-size:0.95rem">Днес · 10А</strong>
+          <span class="preview__live"><span style="width:8px;height:8px;border-radius:50%;background:currentColor;display:inline-block"></span> на живо</span>
+        </div>
+        <div class="preview__now">
+          <div class="preview__tag">⚡ СЕГА · 3-ТИ ЧАС</div>
+          <div class="preview__subj">Математика</div>
+          <div class="preview__meta">г-жа Иванова · каб. 302 · остават 17 мин</div>
+          <div class="preview__bar2"><i></i></div>
+        </div>
+        <div class="preview__rows">
+          <div class="prow"><time>10:35</time> <b>Биология</b> <span class="mini mini--violet">стая 101 → 204</span></div>
+          <div class="prow"><time>11:25</time> <b>Физика</b> <span class="mini mini--amber">закъснява</span></div>
+          <div class="prow"><time>12:15</time> <b>Английски</b> <span class="mini mini--rose">отменен</span></div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- HERO -->
-  <section class="hero">
-    <svg class="hero__stairs" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <g fill="#9fb0c1">
-        <rect x="500" y="500" width="100" height="100"/>
-        <rect x="560" y="440" width="100" height="160"/>
-        <rect x="620" y="380" width="100" height="220"/>
-        <rect x="680" y="320" width="100" height="280"/>
-        <rect x="740" y="260" width="100" height="340"/>
-        <rect x="800" y="200" width="100" height="400"/>
-        <rect x="860" y="140" width="100" height="460"/>
-        <rect x="920" y="80"  width="100" height="520"/>
-      </g>
-    </svg>
-    <div class="wrap hero__inner">
-      <div class="hero__top">
-        <span class="hero__corner">Учебна година<br>2025–26</span>
-        <span class="hero__place">СУ „Христо Ботев"<br>гр. Пловдив<br>На живо всеки ден</span>
-      </div>
-      <h1 class="hero__title d">
-        <span class="l1">Училищен</span>
-        <span class="l2">Пулс</span>
-        <span class="l3">На живо</span>
-      </h1>
-      <p class="hero__tagline">Промените — преди да тръгнеш за час.</p>
-      <div class="hero__cta">
-        <a href="dnes.html" class="btn btn--solid">Виж моя ден</a>
-        <a href="updates.html" class="btn btn--ghost">Промени на живо</a>
-      </div>
-    </div>
   </section>
 
-  <!-- ВЪЗМОЖНОСТИ -->
-  <section class="caps">
-    <div class="wrap caps__grid">
-      <h2 class="caps__title d">Какво<br>прави</h2>
-      <div class="caps__list">
-        <article class="cap">
-          <span class="cap__num d">01</span>
-          <div>
-            <h3 class="cap__name">Програма на живо</h3>
-            <p class="cap__desc">Целият учебен ден на едно място — текущият час, следващият, смени на стаи и статуси, винаги актуални.</p>
-          </div>
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="wrap">
+      <div class="shead">
+        <p class="shead__k">Възможности</p>
+        <h2 class="shead__t">Всичко важно за деня — на едно място</h2>
+        <p class="shead__s">SchoolPulse решава оперативната страна на училището: какво се случва сега и какво се е променило.</p>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <div class="feature__ic">📡</div>
+          <h3 class="feature__t">Известия в реално време</h3>
+          <p class="feature__d">Учителят отбелязва промяна — закъснение, смяна на стая или отмяна — и учениците я виждат мигновено.</p>
         </article>
-        <article class="cap">
-          <span class="cap__num d">02</span>
-          <div>
-            <h3 class="cap__name">Известия в реално време</h3>
-            <p class="cap__desc">Закъснение, смяна на стая или отменен час — учителят отбелязва промяната и учениците я виждат веднага, без слухове по коридора.</p>
-          </div>
+        <article class="feature">
+          <div class="feature__ic">🗓️</div>
+          <h3 class="feature__t">Програма на живо</h3>
+          <p class="feature__d">Целият учебен ден с актуален час, статуси и промени — винаги синхронизиран и подреден.</p>
         </article>
-        <article class="cap">
-          <span class="cap__num d">03</span>
-          <div>
-            <h3 class="cap__name">Локатор на учители</h3>
-            <p class="cap__desc">Виж къде е всеки преподавател и какъв е статусът му — в час, свободен, закъснява или отсъства.</p>
-          </div>
+        <article class="feature">
+          <div class="feature__ic">📍</div>
+          <h3 class="feature__t">Локатор на учители</h3>
+          <p class="feature__d">Виж къде е всеки преподавател и какъв е статусът му — в час, свободен или отсъства.</p>
         </article>
       </div>
     </div>
-  </section>
-
-  <!-- OPS BAND -->
-  <section class="ops">
-    <img class="ops__img" src="assets/img/ops.png" alt="">
-    <h2 class="ops__title d">Синхрон в<br>реално време</h2>
   </section>
 
   <footer class="foot">
-    <div class="wrap foot__grid">
-      <div>
-        <div class="foot__brand">SCHOOLPULSE</div>
-        <p class="foot__about">Централна платформа за координация в реално време — програма, промени и прозрачност за цялото училище.</p>
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <a href="index.html" class="brand"><span class="brand__dot">SP</span> School<b>Pulse</b></a>
+          <p class="foot__about">Платформа за координация в реално време — програма, промени и прозрачност за цялото училище.</p>
+        </div>
+        <div class="foot__col"><h4>Навигация</h4>
+          <a href="index.html">Начало</a><a href="dnes.html">Днес</a><a href="updates.html">Промени</a><a href="directory.html">Учители</a><a href="admin.html">Админ</a>
+        </div>
+        <div class="foot__col"><h4>Помощ</h4>
+          <a href="#">Помощен център</a><a href="#">Как се използва</a><a href="#">Обратна връзка</a>
+        </div>
+        <div class="foot__col"><h4>Контакт</h4>
+          <p>✉ support@schoolpulse.bg</p><p>☎ 0700 10 000</p><p>📍 СУ „Христо Ботев", Пловдив</p>
+        </div>
       </div>
-      <div class="foot__col">
-        <h4>Навигация</h4>
-        <a href="index.html">Начало</a>
-        <a href="dnes.html">Днес</a>
-        <a href="updates.html">Промени</a>
-        <a href="directory.html">Учители</a>
-        <a href="admin.html">Админ</a>
-      </div>
-      <div class="foot__col">
-        <h4>Помощ</h4>
-        <a href="#">Помощен център</a>
-        <a href="#">Как се използва</a>
-        <a href="#">Обратна връзка</a>
-      </div>
-      <div class="foot__col">
-        <h4>Контакт</h4>
-        <p>✉ support@schoolpulse.bg</p>
-        <p>☎ 0700 10 000</p>
-        <p>📍 СУ „Христо Ботев", Пловдив</p>
-      </div>
-    </div>
-    <div class="wrap foot__bar">
-      <span>© 2026 SchoolPulse · демонстрационни данни</span>
-      <span>Изработено за НОИТ 2025–26</span>
+      <div class="foot__bar"><span>© 2026 SchoolPulse · демонстрационни данни</span><span>Изработено за НОИТ 2025–26</span></div>
     </div>
   </footer>
 
