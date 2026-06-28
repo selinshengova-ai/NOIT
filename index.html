@@ -6,7 +6,7 @@
   <title>SchoolPulse — Днес</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,27 +17,21 @@
         <div class="sidebar__logo-icon">SP</div>
         <div class="sidebar__logo-text">School<span>Pulse</span></div>
       </div>
-
       <div class="sidebar__profile">
         <div class="profile-card">
           <div class="profile-card__avatar">СМ</div>
           <div class="profile-card__info">
             <div class="profile-card__name">Селин М.</div>
-            <div class="profile-card__meta">
-              <span class="status-dot"></span>
-              10А · Активен
-            </div>
+            <div class="profile-card__meta"><span class="status-dot"></span> 10А · Активен</div>
           </div>
         </div>
       </div>
-
       <div class="sidebar__school">СУ „Христо Ботев"<br>гр. Пловдив</div>
-
       <ul class="sidebar__nav">
-        <li><a href="index.html" class="active"><span class="sidebar__nav-icon">🏠</span> Днес</a></li>
-        <li><a href="#"><span class="sidebar__nav-icon">📅</span> Седмица</a></li>
-        <li><a href="#"><span class="sidebar__nav-icon">👨‍🏫</span> Учители</a></li>
-        <li><a href="#"><span class="sidebar__nav-icon">🔄</span> Промени <span class="nav-badge">3</span></a></li>
+        <li><a href="index.html" class="active">☀ Днес</a></li>
+        <li><a href="#">📅 Разписание</a></li>
+        <li><a href="#">👤 Учители</a></li>
+        <li><a href="#">🔄 Промени <span class="nav-badge">3</span></a></li>
       </ul>
     </aside>
 
@@ -46,16 +40,12 @@
       <header class="page-header">
         <div>
           <h1 class="page-header__greeting">Добро утро, Селин 👋</h1>
-          <p class="page-header__sub">Петък, 27 юни 2025 · 10А · последна актуализация преди <span id="sync-ago">12</span> сек</p>
+          <p class="page-header__sub">Петък, 27 юни 2025 · 10А · актуализация преди <span id="sync-ago">12</span> сек</p>
         </div>
-        <div class="page-header__actions">
-          <button class="icon-btn" aria-label="Известия">🔔</button>
-          <button class="icon-btn" aria-label="Настройки">⚙️</button>
-          <span class="badge badge--live"><span class="pulse"></span> На живо</span>
-        </div>
+        <span class="badge badge--live"><span class="pulse"></span> На живо</span>
       </header>
 
-      <!-- 1. Stats -->
+      <!-- Stats -->
       <div class="stats-row">
         <div class="stat-card stat-card--blue">
           <div class="stat-card__value">7</div>
@@ -63,11 +53,11 @@
         </div>
         <div class="stat-card stat-card--amber">
           <div class="stat-card__value">3</div>
-          <div class="stat-card__label">Промени днес</div>
+          <div class="stat-card__label">Промени</div>
         </div>
         <div class="stat-card stat-card--red">
           <div class="stat-card__value">1</div>
-          <div class="stat-card__label">Отменен днес</div>
+          <div class="stat-card__label">Отменен</div>
         </div>
         <div class="stat-card stat-card--green">
           <div class="stat-card__value" id="time-left">18:42</div>
@@ -75,326 +65,215 @@
         </div>
       </div>
 
-      <!-- 2. NOW card -->
-      <section class="now-card">
-        <div class="now-card__badge">⚡ Сега · 3-ти час</div>
-        <div class="now-card__body">
-          <div class="now-card__main">
-            <div class="now-card__icon">➗</div>
-            <div class="now-card__content">
-              <h2 class="now-card__subject">Математика</h2>
-              <p class="now-card__topic">Квадратни уравнения — неравенства. Подготовка за контролна.</p>
-              <div class="now-card__meta">г-жа Иванова · каб. 302</div>
-              <div class="now-card__remaining">
-                <span>⏱️ Остават <strong id="mins-left">18</strong> минути</span>
+      <!-- NOW + Next | Changes -->
+      <div class="hero-grid">
+        <div class="hero-grid__left">
+          <section class="now-card">
+            <div class="now-card__badge">⚡ Сега · 3-ти час</div>
+            <div class="now-card__body">
+              <div>
+                <h2 class="now-card__subject">➗ Математика</h2>
+                <p class="now-card__topic">Квадратни уравнения — неравенства</p>
+                <p class="now-card__meta">г-жа Иванова · каб. 302 · 09:45 – 10:25</p>
+                <p class="now-card__remaining">⏱️ Остават <strong id="mins-left">18</strong> минути</p>
+                <div class="progress-bar"><div class="progress-bar__fill" id="progress-fill" style="width:72%"></div></div>
               </div>
-              <div class="progress-bar progress-bar--now">
-                <div class="progress-bar__fill" id="progress-fill" style="width: 72%"></div>
+              <div class="now-card__timer" id="countdown">18:42</div>
+            </div>
+          </section>
+
+          <section class="next-card">
+            <div class="next-card__label">➡️ Следващ · 10:35</div>
+            <div class="next-card__row">
+              <div>
+                <div class="next-card__subject">🌿 Биология и ЗО</div>
+                <div class="next-card__meta">г-жа Стоянова · <span class="highlight-purple">101 → 204</span></div>
               </div>
-              <div class="now-card__time-range">09:45 – 10:25</div>
+              <span class="pill pill--room">🔄 Смяна</span>
             </div>
-          </div>
-          <div class="now-card__countdown" id="countdown">18:42</div>
+          </section>
         </div>
-      </section>
 
-      <!-- 3. Next class -->
-      <section class="next-card">
-        <div class="next-card__label">➡️ Следващ час · 10:35</div>
-        <div class="next-card__content">
-          <span class="next-card__icon">🌿</span>
-          <div class="next-card__info">
-            <div class="next-card__subject">Биология и ЗО</div>
-            <div class="next-card__meta">г-жа Стоянова · каб. <span class="room-change-inline">101 → 204</span></div>
+        <section class="card changes-card">
+          <div class="card__header">
+            <h2 class="card__title">🔄 Промени на живо</h2>
+            <span class="muted">преди 2 мин</span>
           </div>
-          <span class="pill pill--room">🔄 Смяна</span>
-        </div>
-      </section>
-
-      <!-- 4. Live changes -->
-      <section class="card changes-card">
-        <div class="card__header">
-          <h2 class="card__title">🔄 Промени на живо</h2>
-          <span class="changes-card__updated">преди 2 мин</span>
-        </div>
-        <ul class="changes-list">
-          <li class="change-item change-item--late">
-            <div class="change-item__icon">⚠️</div>
-            <div class="change-item__content">
-              <div class="change-item__head">
-                <span class="change-item__type">Закъснение</span>
-                <span class="change-item__time">09:42</span>
+          <ul class="changes-list">
+            <li class="change change--late">
+              <span class="change__icon">⚠️</span>
+              <div>
+                <div class="change__title">Закъснение <span class="change__time">09:42</span></div>
+                <div class="change__text">г-н Петров закъснява ~10 мин за Физика (5-ти час)</div>
+                <div class="change__extra">📍 каб. 305</div>
               </div>
-              <div class="change-item__text">г-н Петров закъснява с 10 минути за 5-ти час (Физика).</div>
-              <div class="change-item__extra">📍 каб. 305</div>
-            </div>
-          </li>
-          <li class="change-item change-item--room">
-            <div class="change-item__icon">🚪</div>
-            <div class="change-item__content">
-              <div class="change-item__head">
-                <span class="change-item__type">Смяна на стая</span>
-                <span class="change-item__time">08:15</span>
+            </li>
+            <li class="change change--room">
+              <span class="change__icon">🚪</span>
+              <div>
+                <div class="change__title">Смяна на стая <span class="change__time">08:15</span></div>
+                <div class="change__text">Биология → каб. 204 вместо 101</div>
               </div>
-              <div class="change-item__text">Биология ще се проведе в каб. 204 вместо каб. 101.</div>
-              <div class="change-item__extra change-item__extra--ok">✅ потвърдено</div>
-            </div>
-          </li>
-          <li class="change-item change-item--cancel">
-            <div class="change-item__icon">❌</div>
-            <div class="change-item__content">
-              <div class="change-item__head">
-                <span class="change-item__type">Отменен час</span>
-                <span class="change-item__time">07:48</span>
+            </li>
+            <li class="change change--cancel">
+              <span class="change__icon">❌</span>
+              <div>
+                <div class="change__title">Отменен час <span class="change__time">07:48</span></div>
+                <div class="change__text">Английски език (6-ти час) е отменен за днес</div>
               </div>
-              <div class="change-item__text">Английски език (6-ти час) е отменен за днес.</div>
-              <div class="change-item__extra">📝 г-н Василев</div>
-            </div>
-          </li>
-        </ul>
-        <a href="#" class="changes-card__link">👉 Виж всички 3 промени →</a>
-      </section>
-
-      <!-- 5. Schedule -->
-      <section class="card schedule-card">
-        <div class="card__header">
-          <h2 class="card__title">📋 Дневен график</h2>
-        </div>
-        <ol class="schedule-list">
-
-          <li class="schedule-row schedule-row--finished">
-            <div class="schedule-row__time">08:00</div>
-            <div class="schedule-row__icon">📚</div>
-            <div class="schedule-row__info">
-              <div class="schedule-row__subject">Български език и литература</div>
-              <div class="schedule-row__teacher">г-жа Колева</div>
-            </div>
-            <div class="schedule-row__room">Стая 207</div>
-            <span class="pill pill--done">✅ Приключен</span>
-          </li>
-
-          <li class="schedule-row schedule-row--finished">
-            <div class="schedule-row__time">08:50</div>
-            <div class="schedule-row__icon">🌍</div>
-            <div class="schedule-row__info">
-              <div class="schedule-row__subject">История и цивилизации</div>
-              <div class="schedule-row__teacher">г-н Димитров</div>
-            </div>
-            <div class="schedule-row__room">Стая 104</div>
-            <span class="pill pill--done">✅ Приключен</span>
-          </li>
-
-          <li class="schedule-row schedule-row--current">
-            <div class="schedule-row__time">09:45</div>
-            <div class="schedule-row__icon">➗</div>
-            <div class="schedule-row__info">
-              <div class="schedule-row__subject">Математика</div>
-              <div class="schedule-row__teacher">г-жа Иванова</div>
-            </div>
-            <div class="schedule-row__room">Каб. 302</div>
-            <span class="pill pill--current">🔵 В момента</span>
-          </li>
-
-          <li class="schedule-row schedule-row--room-change">
-            <div class="schedule-row__time">10:35</div>
-            <div class="schedule-row__icon">🌿</div>
-            <div class="schedule-row__info">
-              <div class="schedule-row__subject">Биология и ЗО</div>
-              <div class="schedule-row__teacher">г-жа Стоянова</div>
-            </div>
-            <div class="schedule-row__room"><span class="old-room">101</span>→204</div>
-            <span class="pill pill--room">🔄 Смяна</span>
-          </li>
-
-          <li class="schedule-row schedule-row--late">
-            <div class="schedule-row__time">11:25</div>
-            <div class="schedule-row__icon">🔬</div>
-            <div class="schedule-row__info">
-              <div class="schedule-row__subject">Физика и астрономия</div>
-              <div class="schedule-row__teacher">г-н Петров</div>
-            </div>
-            <div class="schedule-row__room">Стая 305</div>
-            <span class="pill pill--late">⚠️ Закъснява</span>
-          </li>
-
-          <li class="schedule-row schedule-row--cancelled">
-            <div class="schedule-row__time">12:15</div>
-            <div class="schedule-row__icon">📝</div>
-            <div class="schedule-row__info">
-              <div class="schedule-row__subject">Английски език</div>
-              <div class="schedule-row__teacher">г-н Василев</div>
-            </div>
-            <div class="schedule-row__room">Стая 201</div>
-            <span class="pill pill--cancel">❌ Отменен</span>
-          </li>
-
-          <li class="schedule-row schedule-row--upcoming">
-            <div class="schedule-row__time">13:05</div>
-            <div class="schedule-row__icon">⚽</div>
-            <div class="schedule-row__info">
-              <div class="schedule-row__subject">Физическо възпитание</div>
-              <div class="schedule-row__teacher">г-н Георгиев</div>
-            </div>
-            <div class="schedule-row__room">Физк. салон</div>
-            <span class="pill pill--upcoming">⏳ Предстои</span>
-          </li>
-
-        </ol>
-      </section>
-
-      <!-- 6. Teacher locator -->
-      <section class="card teachers-card">
-        <div class="card__header">
-          <h2 class="card__title">👨‍🏫 Къде са учителите</h2>
-        </div>
-        <div class="teacher-search">
-          <input type="search" placeholder="🔍 Търси преподавател…" aria-label="Търси преподавател">
-        </div>
-
-        <div class="teacher-grid">
-          <div class="teacher-tile">
-            <div class="teacher-tile__avatar" style="background:linear-gradient(135deg,#5b8def,#3a6fd8)">ЕИ</div>
-            <span class="teacher-tile__dot teacher-tile__dot--green"></span>
-            <div class="teacher-tile__room">302</div>
-            <div class="teacher-tile__name">г-жа Иванова</div>
-          </div>
-          <div class="teacher-tile">
-            <div class="teacher-tile__avatar" style="background:linear-gradient(135deg,#e8a820,#d4880a)">ПП</div>
-            <span class="teacher-tile__dot teacher-tile__dot--amber"></span>
-            <div class="teacher-tile__room">Уч. стая</div>
-            <div class="teacher-tile__name">г-н Петров</div>
-          </div>
-          <div class="teacher-tile">
-            <div class="teacher-tile__avatar" style="background:linear-gradient(135deg,#6b6560,#4a4540)">МД</div>
-            <span class="teacher-tile__dot teacher-tile__dot--grey"></span>
-            <div class="teacher-tile__room">104</div>
-            <div class="teacher-tile__name">г-н Димитров</div>
-          </div>
-          <div class="teacher-tile">
-            <div class="teacher-tile__avatar" style="background:linear-gradient(135deg,#7c5cbf,#5e3fa0)">СС</div>
-            <span class="teacher-tile__dot teacher-tile__dot--green"></span>
-            <div class="teacher-tile__room">204</div>
-            <div class="teacher-tile__name">г-жа Стоянова</div>
-          </div>
-          <div class="teacher-tile">
-            <div class="teacher-tile__avatar" style="background:linear-gradient(135deg,#d14343,#a83030)">ИВ</div>
-            <span class="teacher-tile__dot teacher-tile__dot--red"></span>
-            <div class="teacher-tile__room">—</div>
-            <div class="teacher-tile__name">г-н Василев</div>
-          </div>
-          <div class="teacher-tile">
-            <div class="teacher-tile__avatar" style="background:linear-gradient(135deg,#e85d4c,#c94435)">БГ</div>
-            <span class="teacher-tile__dot teacher-tile__dot--grey"></span>
-            <div class="teacher-tile__room">Салон</div>
-            <div class="teacher-tile__name">г-н Георгиев</div>
-          </div>
-        </div>
-
-        <ul class="teacher-list">
-          <li class="teacher-card">
-            <div class="teacher-card__avatar-wrap">
-              <div class="teacher-card__photo" style="background:linear-gradient(135deg,#5b8def,#3a6fd8)">ЕИ</div>
-              <span class="teacher-card__dot teacher-card__dot--green"></span>
-            </div>
-            <div class="teacher-card__info">
-              <div class="teacher-card__name">г-жа Елена Иванова</div>
-              <div class="teacher-card__detail">📚 Математика · 📍 Каб. 302</div>
-            </div>
-            <span class="teacher-card__badge teacher-card__badge--in-class">🟢 В час</span>
-          </li>
-          <li class="teacher-card">
-            <div class="teacher-card__avatar-wrap">
-              <div class="teacher-card__photo" style="background:linear-gradient(135deg,#e8a820,#d4880a)">ПП</div>
-              <span class="teacher-card__dot teacher-card__dot--amber"></span>
-            </div>
-            <div class="teacher-card__info">
-              <div class="teacher-card__name">г-н Петър Петров</div>
-              <div class="teacher-card__detail">🔬 Физика · 📍 Учителска стая</div>
-            </div>
-            <span class="teacher-card__badge teacher-card__badge--late">🟡 Закъснява</span>
-          </li>
-          <li class="teacher-card">
-            <div class="teacher-card__avatar-wrap">
-              <div class="teacher-card__photo" style="background:linear-gradient(135deg,#6b6560,#4a4540)">МД</div>
-              <span class="teacher-card__dot teacher-card__dot--grey"></span>
-            </div>
-            <div class="teacher-card__info">
-              <div class="teacher-card__name">г-н Митко Димитров</div>
-              <div class="teacher-card__detail">🌍 История · 📍 Стая 104</div>
-            </div>
-            <span class="teacher-card__badge teacher-card__badge--free">🟡 Свободен</span>
-          </li>
-          <li class="teacher-card">
-            <div class="teacher-card__avatar-wrap">
-              <div class="teacher-card__photo" style="background:linear-gradient(135deg,#7c5cbf,#5e3fa0)">СС</div>
-              <span class="teacher-card__dot teacher-card__dot--green"></span>
-            </div>
-            <div class="teacher-card__info">
-              <div class="teacher-card__name">г-жа Светла Стоянова</div>
-              <div class="teacher-card__detail">🌿 Биология · 📍 Стая 204</div>
-            </div>
-            <span class="teacher-card__badge teacher-card__badge--in-class">🟢 В час</span>
-          </li>
-          <li class="teacher-card">
-            <div class="teacher-card__avatar-wrap">
-              <div class="teacher-card__photo" style="background:linear-gradient(135deg,#d14343,#a83030)">ИВ</div>
-              <span class="teacher-card__dot teacher-card__dot--red"></span>
-            </div>
-            <div class="teacher-card__info">
-              <div class="teacher-card__name">г-н Иван Василев</div>
-              <div class="teacher-card__detail">📝 Английски език · 📍 Стая 201</div>
-            </div>
-            <span class="teacher-card__badge teacher-card__badge--absent">🔴 Отсъства</span>
-          </li>
-          <li class="teacher-card">
-            <div class="teacher-card__avatar-wrap">
-              <div class="teacher-card__photo" style="background:linear-gradient(135deg,#e85d4c,#c94435)">БГ</div>
-              <span class="teacher-card__dot teacher-card__dot--grey"></span>
-            </div>
-            <div class="teacher-card__info">
-              <div class="teacher-card__name">г-н Борис Георгиев</div>
-              <div class="teacher-card__detail">⚽ Физическо · 📍 Физк. салон</div>
-            </div>
-            <span class="teacher-card__badge teacher-card__badge--free">🟡 Свободен</span>
-          </li>
-        </ul>
-      </section>
-
-      <!-- 7. School announcement -->
-      <div class="school-message">
-        <div class="school-message__title">📢 Съобщение от училището</div>
-        Библиотеката работи с удължено работно време до 18:30 ч. тази седмица за подготовка за матурите.
+            </li>
+          </ul>
+          <a href="#" class="changes-link">👉 Виж всички промени →</a>
+        </section>
       </div>
 
-      <footer class="page-footer">
-        SchoolPulse · Демонстрационни данни · Профил: ученик · 10А — СУ „Христо Ботев", гр. Пловдив
-      </footer>
+      <!-- Schedule | Teachers -->
+      <div class="content-grid">
+
+        <section class="card">
+          <div class="card__header"><h2 class="card__title">📋 Дневен график</h2></div>
+          <ol class="schedule-list">
+            <li class="row row--done">
+              <span class="row__time">08:00</span>
+              <span class="row__icon">📚</span>
+              <div class="row__info">
+                <div class="row__subject">Български език и литература</div>
+                <div class="row__teacher">г-жа Колева</div>
+              </div>
+              <span class="row__room">Стая 207</span>
+              <span class="pill pill--done">✅ Приключен</span>
+            </li>
+            <li class="row row--done">
+              <span class="row__time">08:50</span>
+              <span class="row__icon">🌍</span>
+              <div class="row__info">
+                <div class="row__subject">История и цивилизации</div>
+                <div class="row__teacher">г-н Димитров</div>
+              </div>
+              <span class="row__room">Стая 104</span>
+              <span class="pill pill--done">✅ Приключен</span>
+            </li>
+            <li class="row row--now">
+              <span class="row__time">09:45</span>
+              <span class="row__icon">➗</span>
+              <div class="row__info">
+                <div class="row__subject">Математика</div>
+                <div class="row__teacher">г-жа Иванова</div>
+              </div>
+              <span class="row__room">Каб. 302</span>
+              <span class="pill pill--now">🔵 В момента</span>
+            </li>
+            <li class="row row--room">
+              <span class="row__time">10:35</span>
+              <span class="row__icon">🌿</span>
+              <div class="row__info">
+                <div class="row__subject">Биология и ЗО</div>
+                <div class="row__teacher">г-жа Стоянова</div>
+              </div>
+              <span class="row__room"><s>101</s> → 204</span>
+              <span class="pill pill--room">🔄 Смяна</span>
+            </li>
+            <li class="row row--late">
+              <span class="row__time">11:25</span>
+              <span class="row__icon">🔬</span>
+              <div class="row__info">
+                <div class="row__subject">Физика и астрономия</div>
+                <div class="row__teacher">г-н Петров</div>
+              </div>
+              <span class="row__room">Стая 305</span>
+              <span class="pill pill--late">⚠️ Закъснява</span>
+            </li>
+            <li class="row row--cancel">
+              <span class="row__time">12:15</span>
+              <span class="row__icon">📝</span>
+              <div class="row__info">
+                <div class="row__subject">Английски език</div>
+                <div class="row__teacher">г-н Василев</div>
+              </div>
+              <span class="row__room">Стая 201</span>
+              <span class="pill pill--cancel">❌ Отменен</span>
+            </li>
+            <li class="row">
+              <span class="row__time">13:05</span>
+              <span class="row__icon">⚽</span>
+              <div class="row__info">
+                <div class="row__subject">Физическо възпитание</div>
+                <div class="row__teacher">г-н Георгиев</div>
+              </div>
+              <span class="row__room">Физк. салон</span>
+              <span class="pill pill--upcoming">⏳ Предстои</span>
+            </li>
+          </ol>
+        </section>
+
+        <aside class="right-col">
+          <section class="card">
+            <div class="card__header"><h2 class="card__title">👨‍🏫 Къде са учителите</h2></div>
+            <div class="search-wrap">
+              <input type="search" placeholder="Търси преподавател…">
+            </div>
+            <ul class="teachers">
+              <li class="teacher">
+                <div class="teacher__avatar" style="background:#3a6fd8">ЕИ<span class="teacher__dot teacher__dot--green"></span></div>
+                <div class="teacher__info">
+                  <div class="teacher__name">г-жа Елена Иванова</div>
+                  <div class="teacher__detail">Математика · Каб. 302</div>
+                </div>
+                <span class="teacher__status teacher__status--green">В час</span>
+              </li>
+              <li class="teacher">
+                <div class="teacher__avatar" style="background:#d4880a">ПП<span class="teacher__dot teacher__dot--amber"></span></div>
+                <div class="teacher__info">
+                  <div class="teacher__name">г-н Петър Петров</div>
+                  <div class="teacher__detail">Физика · Учителска стая</div>
+                </div>
+                <span class="teacher__status teacher__status--amber">Закъснява</span>
+              </li>
+              <li class="teacher">
+                <div class="teacher__avatar" style="background:#6b6560">МД<span class="teacher__dot teacher__dot--grey"></span></div>
+                <div class="teacher__info">
+                  <div class="teacher__name">г-н Митко Димитров</div>
+                  <div class="teacher__detail">История · Стая 104</div>
+                </div>
+                <span class="teacher__status teacher__status--grey">Свободен</span>
+              </li>
+              <li class="teacher">
+                <div class="teacher__avatar" style="background:#7c5cbf">СС<span class="teacher__dot teacher__dot--green"></span></div>
+                <div class="teacher__info">
+                  <div class="teacher__name">г-жа Светла Стоянова</div>
+                  <div class="teacher__detail">Биология · Стая 204</div>
+                </div>
+                <span class="teacher__status teacher__status--green">В час</span>
+              </li>
+              <li class="teacher">
+                <div class="teacher__avatar" style="background:#d14343">ИВ<span class="teacher__dot teacher__dot--red"></span></div>
+                <div class="teacher__info">
+                  <div class="teacher__name">г-н Иван Василев</div>
+                  <div class="teacher__detail">Английски език · Отсъства</div>
+                </div>
+                <span class="teacher__status teacher__status--red">Отсъства</span>
+              </li>
+              <li class="teacher">
+                <div class="teacher__avatar" style="background:#e85d4c">БГ<span class="teacher__dot teacher__dot--grey"></span></div>
+                <div class="teacher__info">
+                  <div class="teacher__name">г-н Борис Георгиев</div>
+                  <div class="teacher__detail">Физическо · Физк. салон</div>
+                </div>
+                <span class="teacher__status teacher__status--grey">Свободен</span>
+              </li>
+            </ul>
+          </section>
+
+          <div class="announcement">
+            <div class="announcement__title">📢 Съобщение от училището</div>
+            Библиотеката работи с удължено работно време до 18:30 ч. тази седмица за подготовка за матурите.
+          </div>
+        </aside>
+
+      </div>
 
     </main>
-
-    <!-- Bottom navigation -->
-    <nav class="bottom-nav" aria-label="Основна навигация">
-      <a href="index.html" class="bottom-nav__item bottom-nav__item--active">
-        <span class="bottom-nav__icon">🏠</span>
-        <span class="bottom-nav__label">Днес</span>
-      </a>
-      <a href="#" class="bottom-nav__item">
-        <span class="bottom-nav__icon">📅</span>
-        <span class="bottom-nav__label">Седмица</span>
-      </a>
-      <a href="#" class="bottom-nav__item">
-        <span class="bottom-nav__icon">👨‍🏫</span>
-        <span class="bottom-nav__label">Учители</span>
-      </a>
-      <a href="#" class="bottom-nav__item">
-        <span class="bottom-nav__icon">🔄</span>
-        <span class="bottom-nav__label">Промени</span>
-        <span class="bottom-nav__badge">3</span>
-      </a>
-    </nav>
-
   </div>
-
   <script src="js/app.js"></script>
 </body>
 </html>
