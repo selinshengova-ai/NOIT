@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SchoolPulse — Live School Coordination</title>
+  <title>SchoolPulse — Училището на живо</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
@@ -15,13 +15,32 @@
     <div class="nav__inner">
       <a href="index.html" class="nav__brand">SCHOOLPULSE</a>
       <nav class="nav__links">
-        <a href="index.html" class="nav__link nav__link--on">Home</a>
-        <a href="updates.html" class="nav__link">Updates</a>
-        <a href="directory.html" class="nav__link">Directory</a>
-        <a href="admin.html" class="nav__link">Admin</a>
+        <a href="index.html" class="nav__link nav__link--on">Начало</a>
+        <a href="updates.html" class="nav__link">Промени</a>
+        <a href="directory.html" class="nav__link">Учители</a>
+        <a href="admin.html" class="nav__link">Админ</a>
       </nav>
     </div>
   </header>
+
+  <!-- LIVE TICKER -->
+  <div class="ticker">
+    <div class="ticker__row">
+      <span class="ticker__label">На живо</span>
+      <div class="ticker__mask">
+        <div class="ticker__track">
+          <span>🚪 Биология — <b>стая 101 → 204</b></span>
+          <span>⏱ Физика — <b>г-н Петров закъснява ~10 мин</b></span>
+          <span>❌ Английски (6-ти час) — <b>отменен</b></span>
+          <span>📐 Сега: Математика · каб. 302</span>
+          <span>🚪 Биология — <b>стая 101 → 204</b></span>
+          <span>⏱ Физика — <b>г-н Петров закъснява ~10 мин</b></span>
+          <span>❌ Английски (6-ти час) — <b>отменен</b></span>
+          <span>📐 Сега: Математика · каб. 302</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -38,45 +57,45 @@
       </g>
     </svg>
     <div class="wrap hero__inner">
-      <span class="hero__corner">Academic Year<br>2025–26</span>
-      <span class="hero__place">СУ „Христо Ботев"<br>Пловдив, България<br>In person &amp; online</span>
+      <span class="hero__corner">Учебна година<br>2025–26</span>
+      <span class="hero__place">СУ „Христо Ботев"<br>гр. Пловдив<br>На живо всеки ден</span>
       <h1 class="hero__title d">
-        <span class="l1">School</span>
-        <span class="l2">Pulse</span>
-        <span class="l3">Coordination</span>
+        <span class="l1">Училищен</span>
+        <span class="l2">Пулс</span>
+        <span class="l3">На живо</span>
       </h1>
-      <span class="hero__date d">Live · every school day</span>
+      <span class="hero__date d">Промените — преди да тръгнеш</span>
       <div class="hero__cta">
-        <a href="updates.html" class="btn btn--solid">View Live Updates</a>
-        <a href="directory.html" class="btn btn--ghost">Open Directory</a>
+        <a href="updates.html" class="btn btn--solid">Виж промените</a>
+        <a href="directory.html" class="btn btn--ghost">Къде са учителите</a>
       </div>
     </div>
   </section>
 
-  <!-- CORE CAPABILITIES -->
+  <!-- ВЪЗМОЖНОСТИ -->
   <section class="caps">
     <div class="wrap caps__grid">
-      <h2 class="caps__title d">Core<br>Capabilities</h2>
+      <h2 class="caps__title d">Какво<br>прави</h2>
       <div class="caps__list">
         <article class="cap">
           <span class="cap__num d">01</span>
           <div>
-            <h3 class="cap__name">Real-Time Broadcasts</h3>
-            <p class="cap__desc">Instant notifications for schedule changes, delays and cancellations, broadcast to all relevant parties simultaneously — ensuring zero information lag.</p>
+            <h3 class="cap__name">Програма на живо</h3>
+            <p class="cap__desc">Целият учебен ден на едно място — текущият час, следващият, смени на стаи и статуси, винаги актуални.</p>
           </div>
         </article>
         <article class="cap">
           <span class="cap__num d">02</span>
           <div>
-            <h3 class="cap__name">Unified Daily Schedule</h3>
-            <p class="cap__desc">One live timetable for every class. The current lesson, room changes and the rest of the day are always one glance away.</p>
+            <h3 class="cap__name">Известия в реално време</h3>
+            <p class="cap__desc">Закъснение, смяна на стая или отменен час — учителят отбелязва промяната и учениците я виждат веднага, без слухове по коридора.</p>
           </div>
         </article>
         <article class="cap">
           <span class="cap__num d">03</span>
           <div>
-            <h3 class="cap__name">Live Directory</h3>
-            <p class="cap__desc">Check the current location and operational status of every student and faculty member across campus in real time.</p>
+            <h3 class="cap__name">Локатор на учители</h3>
+            <p class="cap__desc">Виж къде е всеки преподавател и какъв е статусът му — в час, свободен, закъснява или отсъства.</p>
           </div>
         </article>
       </div>
@@ -86,13 +105,13 @@
   <!-- OPS BAND -->
   <section class="ops">
     <img class="ops__img" src="assets/img/ops.png" alt="">
-    <h2 class="ops__title d">Synchronized<br>Operations</h2>
+    <h2 class="ops__title d">Синхрон в<br>реално време</h2>
   </section>
 
   <footer class="foot">
     <div class="wrap foot__inner">
       <span class="foot__brand">SCHOOLPULSE</span>
-      <span class="foot__txt">СУ „Христо Ботев", гр. Пловдив · demonstration data · © 2026</span>
+      <span class="foot__txt">СУ „Христо Ботев", гр. Пловдив · демонстрационни данни · © 2026</span>
     </div>
   </footer>
 
